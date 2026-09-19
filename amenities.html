@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amenities | Noble Forest RV Village - Dog-Friendly RV Park with WiFi</title>
+
+    <!-- Load Google Fonts: Montserrat (Display) and Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#48751F',
+                        secondary: '#F3F5F8',
+                        bodyText: '#B37822',
+                        accent: '#D2963E',
+                        goldAccent: '#F5C23F',
+                        greenText: '#024600',
+                        greyAccent: '#F3F3F3',
+                        greyBg: '#E9E9E9',
+                    },
+                    fontFamily: {
+                        display: ['Montserrat', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --color-primary: #48751F;
+            --color-secondary: #F3F5F8;
+            --color-body-text: #B37822;
+            --color-accent: #D2963E;
+            --color-gold-accent: #F5C23F;
+            --color-green-text: #024600;
+            --color-overlay-bg: rgba(0, 0, 0, 0.65);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #212121;
+            background-color: #FFFFFF;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Focus states for accessibility */
+        :focus-visible {
+            outline: 3px solid var(--color-accent);
+            outline-offset: 4px;
+        }
+    </style>
+</head>
+
+<body class="bg-white antialiased selection:bg-accent selection:text-white">
+
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-primary focus:text-white">
+        Skip to main content
+    </a>
+
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-greyAccent shadow-sm">
+        <!-- Top Utility Bar -->
+        <div class="bg-primary text-white text-sm py-2 px-4 sm:px-8 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="tel:9368942079"
+                    class="font-medium hover:text-goldAccent transition-colors flex items-center gap-2">
+                    <span>📞 (936) 894-2079</span>
+                </a>
+            </div>
+            <div class="flex items-center space-x-3">
+                <a href="https://www.facebook.com/NobleForestRVVillage" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-goldAccent transition-colors" aria-label="Facebook">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/nobleforest_rv/" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-goldAccent transition-colors" aria-label="Instagram">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Nav Menu Container -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3">
+                <img src="https://nobleforestrv.com/wp-content/uploads/2023/08/Logo-png-transparent.png"
+                    alt="Noble Forest RV Village Logo" class="h-12 w-auto object-contain">
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden lg:flex items-center space-x-8 font-medium text-gray-700">
+                <a href="/" class="hover:text-primary transition-colors">Home</a>
+                <a href="amenities.html" class="text-primary font-semibold transition-colors" aria-current="page">Amenities</a>
+                <a href="site-types.html" class="hover:text-primary transition-colors">Site types</a>
+                <a href="rates.html" class="hover:text-primary transition-colors">Rates</a>
+                <a href="directions.html" class="hover:text-primary transition-colors">Map & Directions</a>
+                <div class="relative group">
+                    <button class="flex items-center gap-1 hover:text-primary transition-colors py-2">
+                        More ▾
+                    </button>
+                    <div
+                        class="absolute top-full left-0 w-56 bg-white shadow-xl rounded-xl py-2 hidden group-hover:block border border-greyAccent">
+                        <a href="/rv-park-near-montgomery-texas/"
+                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-primary">RV Park near
+                            Montgomery</a>
+                        <a href="/texas-renaissance-festival/"
+                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-primary">Texas RenFest
+                            Guide</a>
+                        <a href="policies.html" class="block px-4 py-2 text-sm hover:bg-secondary hover:text-primary">Park
+                            Policies</a>
+                        <a href="privacy-policy.html"
+                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-primary">Privacy Policy</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden lg:block">
+                <a href="https://app.fireflyreservations.com/reserve/property/NobleForestRV" target="_blank"
+                    rel="noopener noreferrer"
+                    class="bg-accent hover:bg-[#be822d] active:scale-95 text-white font-medium px-6 py-3 rounded-lg shadow-md transition-all duration-150">
+                    BOOK NOW
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Page Hero Header -->
+        <section class="bg-primary text-white py-16 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
+            <div class="max-w-4xl mx-auto space-y-4 relative z-10">
+                <h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-white">
+                    Premium Amenities
+                </h1>
+                <p class="text-xl sm:text-2xl text-goldAccent font-medium max-w-2xl mx-auto">
+                    All the Essentials for Your Perfect Stay at Noble Forest RV Village
+                </p>
+            </div>
+        </section>
+
+        <!-- Amenities Alternating Showcase Section -->
+        <section class="py-12 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 lg:space-y-24">
+
+                <!-- Amenity 1: Full Hook up -->
+                <article class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-secondary rounded-3xl p-6 sm:p-10 shadow-sm border border-greyAccent">
+                    <div class="space-y-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
+                            Full Service
+                        </span>
+                        <h2 class="font-display text-2xl sm:text-3xl font-bold text-primary">
+                            Full Hook up
+                        </h2>
+                        <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
+                            Every site at Noble Forest RV Village features 30 amp and 50 amp electric service, along with fresh water and sewer connections. You can comfortably take a shower, run your air conditioner, and enjoy all the comforts of home.
+                        </p>
+                    </div>
+                    <div class="overflow-hidden rounded-2xl shadow-md">
+                        <img src="https://nobleforestrv.com/wp-content/uploads/2024/09/amenities-fullhookups.jpg"
+                            alt="Full Hook up site with 30 and 50 amp utility connections"
+                            class="w-full h-72 sm:h-80 object-cover hover:scale-105 transition-transform duration-300"
+                            loading="lazy">
+                    </div>
+                </article>
+
+                <!-- Wave Divider SVG -->
+                <div class="w-full overflow-hidden leading-none opacity-30 text-primary py-2" aria-hidden="true">
+                    <svg class="w-full h-8" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                        <path fill="currentColor" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
+                    </svg>
+                </div>
+
+                <!-- Amenity 2: FREE High Speed Internet -->
+                <article class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center rounded-3xl p-6 sm:p-10 border border-greyAccent bg-white shadow-sm">
+                    <div class="overflow-hidden rounded-2xl shadow-md lg:order-1 order-2">
+                        <img src="https://nobleforestrv.com/wp-content/uploads/2024/09/mainwifie.jpg"
+                            alt="High Speed Fiber WiFi available across the RV park"
+                            class="w-full h-72 sm:h-80 object-cover hover:scale-105 transition-transform duration-300"
+                            loading="lazy">
+                    </div>
+                    <div class="space-y-4 lg:order-2 order-1">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent">
+                            Included Free
+                        </span>
+                        <h2 class="font-display text-2xl sm:text-3xl font-bold text-primary">
+                            FREE High Speed Internet
+                        </h2>
+                        <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
+                            We offer blazing-fast 1 GB fiber Internet throughout the park. Guests can easily access our password-protected free WiFi from their RV sites, making streaming video and working online a breeze.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Amenity 3: Dog Park -->
+                <article class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-secondary rounded-3xl p-6 sm:p-10 shadow-sm border border-greyAccent">
+                    <div class="space-y-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
+                            Pet Friendly
+                        </span>
+                        <h2 class="font-display text-2xl sm:text-3xl font-bold text-primary">
+                            Dog Park
+                        </h2>
+                        <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
+                            As a pet-friendly RV park, we want your furry friends to feel at home too! Our quarter-acre dog park is the perfect place for your pets to play and socialize, and we have dog waste stations conveniently located throughout the park.
+                        </p>
+                    </div>
+                    <div class="overflow-hidden rounded-2xl shadow-md">
+                        <img src="https://nobleforestrv.com/wp-content/uploads/2024/09/dogpark.jpg"
+                            alt="Fenced quarter-acre dog park at Noble Forest RV Village"
+                            class="w-full h-72 sm:h-80 object-cover hover:scale-105 transition-transform duration-300"
+                            loading="lazy">
+                    </div>
+                </article>
+
+                <!-- Amenity 4: Laundry Room -->
+                <article class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center rounded-3xl p-6 sm:p-10 border border-greyAccent bg-white shadow-sm">
+                    <div class="overflow-hidden rounded-2xl shadow-md lg:order-1 order-2">
+                        <img src="https://nobleforestrv.com/wp-content/uploads/2024/09/updateamenitieslaundry.jpg"
+                            alt="Clean 24-hour laundry facility with washers and dryers"
+                            class="w-full h-72 sm:h-80 object-cover hover:scale-105 transition-transform duration-300"
+                            loading="lazy">
+                    </div>
+                    <div class="space-y-4 lg:order-2 order-1">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
+                            24/7 Access
+                        </span>
+                        <h2 class="font-display text-2xl sm:text-3xl font-bold text-primary">
+                            Laundry Room
+                        </h2>
+                        <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
+                            Enjoy 24-hour secure access to our laundry room, equipped with washers and dryers for your convenience. Long-term guests can also receive their mail here, making our gated RV park with laundry hassle-free.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Amenity 5: Gated Community -->
+                <article class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-secondary rounded-3xl p-6 sm:p-10 shadow-sm border border-greyAccent">
+                    <div class="space-y-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
+                            Secure & Safe
+                        </span>
+                        <h2 class="font-display text-2xl sm:text-3xl font-bold text-primary">
+                            Gated Community
+                        </h2>
+                        <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
+                            Your safety is our top priority at Noble Forest RV Village. Our fully fenced RV campground with WiFi features individual access codes for entry. We have monitored cameras and security lights throughout the park, and we conduct criminal background checks on guests to ensure everyone’s safety.
+                        </p>
+                    </div>
+                    <div class="overflow-hidden rounded-2xl shadow-md">
+                        <img src="https://nobleforestrv.com/wp-content/uploads/2024/09/gatecommunity.jpg"
+                            alt="Secure gated entrance with key code access"
+                            class="w-full h-72 sm:h-80 object-cover hover:scale-105 transition-transform duration-300"
+                            loading="lazy">
+                    </div>
+                </article>
+
+                <!-- Amenity 6: Private Restrooms with Showers -->
+                <article class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center rounded-3xl p-6 sm:p-10 border border-greyAccent bg-white shadow-sm">
+                    <div class="overflow-hidden rounded-2xl shadow-md lg:order-1 order-2">
+                        <img src="https://nobleforestrv.com/wp-content/uploads/2024/09/private-restroom.jpg"
+                            alt="Spotless private bathroom and shower facilities"
+                            class="w-full h-72 sm:h-80 object-cover hover:scale-105 transition-transform duration-300"
+                            loading="lazy">
+                    </div>
+                    <div class="space-y-4 lg:order-2 order-1">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
+                            Clean & Accessible
+                        </span>
+                        <h2 class="font-display text-2xl sm:text-3xl font-bold text-primary">
+                            Private Restrooms with Showers
+                        </h2>
+                        <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
+                            We offer four private bathrooms with showers for guests to use. Each bathroom is cleaned daily and is wheelchair accessible, providing comfort and convenience for all.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Amenity 7: Family Friendly Perks -->
+                <article class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-secondary rounded-3xl p-6 sm:p-10 shadow-sm border border-greyAccent">
+                    <div class="space-y-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent">
+                            Family Fun
+                        </span>
+                        <h2 class="font-display text-2xl sm:text-3xl font-bold text-primary">
+                            Family Friendly Perks
+                        </h2>
+                        <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
+                            As a family-owned and operated business, we strive to make Noble Forest RV Village a fun destination for everyone. Enjoy our Little Free Library, gaga pit, four square blacktop, and swings. We also provide family games, streaming TV, and a pool table in our Rec Room, ensuring there’s something for everyone.
+                        </p>
+                    </div>
+                    <div class="overflow-hidden rounded-2xl shadow-md">
+                        <img src="https://nobleforestrv.com/wp-content/uploads/2024/09/amenity-familyfriendly.jpg"
+                            alt="Family friendly outdoor activity areas"
+                            class="w-full h-72 sm:h-80 object-cover hover:scale-105 transition-transform duration-300"
+                            loading="lazy">
+                    </div>
+                </article>
+
+                <!-- Amenity 8: Rec Room -->
+                <article class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center rounded-3xl p-6 sm:p-10 border border-greyAccent bg-white shadow-sm">
+                    <div class="overflow-hidden rounded-2xl shadow-md lg:order-1 order-2">
+                        <img src="https://nobleforestrv.com/wp-content/uploads/2024/09/recroom.jpg"
+                            alt="Community Rec Room with pool table and gathering space"
+                            class="w-full h-72 sm:h-80 object-cover hover:scale-105 transition-transform duration-300"
+                            loading="lazy">
+                    </div>
+                    <div class="space-y-4 lg:order-2 order-1">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
+                            Community Space
+                        </span>
+                        <h2 class="font-display text-2xl sm:text-3xl font-bold text-primary">
+                            Rec Room
+                        </h2>
+                        <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
+                            Our Rec Room is open daily for fun. Escape the heat and grab a snack. Play a game of pool, or try your hand at a puzzle. Many guests use the Rec Room to host birthday parties and celebrations, making it a great place for your next family gathering.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Amenity 9: Accessible -->
+                <article class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-secondary rounded-3xl p-6 sm:p-10 shadow-sm border border-greyAccent">
+                    <div class="space-y-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
+                            ADA Wheelchair Accessible
+                        </span>
+                        <h2 class="font-display text-2xl sm:text-3xl font-bold text-primary">
+                            Accessible Facilities
+                        </h2>
+                        <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
+                            We are committed to providing wheelchair accessible facilities. Our paved parking lot features level entry into the restrooms, laundry, office, and Rec Room. Our bathrooms also include level shower entries with handholds for your comfort.
+                        </p>
+                    </div>
+                    <div class="overflow-hidden rounded-2xl shadow-md">
+                        <img src="https://nobleforestrv.com/wp-content/uploads/2024/09/accesible.jpg"
+                            alt="Level paved access and wheelchair friendly paths"
+                            class="w-full h-72 sm:h-80 object-cover hover:scale-105 transition-transform duration-300"
+                            loading="lazy">
+                    </div>
+                </article>
+
+                <!-- Amenity 10: Premium Sites -->
+                <article class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center rounded-3xl p-6 sm:p-10 border border-greyAccent bg-white shadow-sm">
+                    <div class="overflow-hidden rounded-2xl shadow-md lg:order-1 order-2">
+                        <img src="https://nobleforestrv.com/wp-content/uploads/2024/09/updateamenities2-premiumsitesfireringpicnictable.jpg"
+                            alt="Spacious premium RV sites with fire rings and picnic tables"
+                            class="w-full h-72 sm:h-80 object-cover hover:scale-105 transition-transform duration-300"
+                            loading="lazy">
+                    </div>
+                    <div class="space-y-4 lg:order-2 order-1">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent">
+                            Spacious & Varied
+                        </span>
+                        <h2 class="font-display text-2xl sm:text-3xl font-bold text-primary">
+                            Premium Sites
+                        </h2>
+                        <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
+                            Choose from a variety of site options including standard, patio, extra-wide, and buddy sites! Whether you’re looking for an RV park dog-friendly space or a spacious area for family gatherings, we have the perfect site for you.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Amenity 11: Safety Lighting -->
+                <article class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-secondary rounded-3xl p-6 sm:p-10 shadow-sm border border-greyAccent">
+                    <div class="space-y-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
+                            Nighttime Illumination
+                        </span>
+                        <h2 class="font-display text-2xl sm:text-3xl font-bold text-primary">
+                            Safety Lighting
+                        </h2>
+                        <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
+                            For night owls, every site is equipped with safety illumination, allowing you to move about safely and see your way around after dark.
+                        </p>
+                    </div>
+                    <div class="overflow-hidden rounded-2xl shadow-md">
+                        <img src="https://nobleforestrv.com/wp-content/uploads/2024/09/lightslamp.jpg"
+                            alt="Well-lit walkways and site illumination"
+                            class="w-full h-72 sm:h-80 object-cover hover:scale-105 transition-transform duration-300"
+                            loading="lazy">
+                    </div>
+                </article>
+
+                <!-- Amenity 12: Shade Trees -->
+                <article class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center rounded-3xl p-6 sm:p-10 border border-greyAccent bg-white shadow-sm">
+                    <div class="overflow-hidden rounded-2xl shadow-md lg:order-1 order-2">
+                        <img src="https://nobleforestrv.com/wp-content/uploads/2024/12/drone.jpg"
+                            alt="Mature East Texas pine and hardwood trees providing ample shade"
+                            class="w-full h-72 sm:h-80 object-cover hover:scale-105 transition-transform duration-300"
+                            loading="lazy">
+                    </div>
+                    <div class="space-y-4 lg:order-2 order-1">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
+                            Natural Canopy
+                        </span>
+                        <h2 class="font-display text-2xl sm:text-3xl font-bold text-primary">
+                            Shade Trees
+                        </h2>
+                        <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
+                            The East Texas Piney woods forest is covered by Loblolly pine, Sweetgum, Post Oak, Red Oak, Water Oak, White Oak, American holly, and American elm. These mature trees shade the RV sites and tent sites at Noble Forest RV Village.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- CTA Reservation Section -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8 bg-secondary border-t border-greyAccent">
+            <div class="max-w-4xl mx-auto text-center space-y-8">
+                <h2 class="font-display font-bold text-3xl sm:text-5xl text-primary leading-tight">
+                    Ready to see for yourself?
+                </h2>
+                <p class="text-gray-700 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
+                    Make a reservation online or call or text us at <a href="tel:9368942079"
+                        class="font-semibold text-bodyText hover:text-accent transition-colors">(936) 894-2079</a>. We
+                    can't wait to welcome you to your new home away from home!
+                </p>
+                <div class="pt-4">
+                    <a href="https://app.fireflyreservations.com/reserve/property/NobleForestRV" target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center bg-accent hover:bg-[#be822d] active:scale-95 text-white font-medium px-8 py-4 rounded-xl shadow-lg text-lg transition-all duration-150">
+                        Book Online
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="bg-primary text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8 border-t-4 border-accent">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+            <!-- Column 1 -->
+            <div class="space-y-4">
+                <img src="https://nobleforestrv.com/wp-content/uploads/2023/08/Logo-png-transparent-300x159.png"
+                    alt="Noble Forest Logo" class="h-12 w-auto brightness-0 invert">
+                <p class="text-gray-200 text-sm leading-relaxed">
+                    Noble Forest RV Village offers overnight camping, short term RV stays, and long term RV parking
+                    sites, with full hookups, in a family friendly community under mature shade trees.
+                </p>
+            </div>
+            <!-- Column 2 -->
+            <div>
+                <h6 class="font-display font-semibold text-lg text-goldAccent mb-4">Useful Links</h6>
+                <ul class="space-y-2 text-sm text-gray-200">
+                    <li><a href="/" class="hover:text-goldAccent transition-colors">Home</a></li>
+                    <li><a href="amenities.html" class="hover:text-goldAccent transition-colors">Amenities</a></li>
+                    <li><a href="site-types.html" class="hover:text-goldAccent transition-colors">SiteTypes</a></li>
+                    <li><a href="rates.html" class="hover:text-goldAccent transition-colors">Rates</a></li>
+                    <li><a href="privacy-policy.html" class="hover:text-goldAccent transition-colors">Privacy Policy</a>
+                    </li>
+                    <li><a href="policies.html" class="hover:text-goldAccent transition-colors">Policy</a></li>
+                </ul>
+            </div>
+            <!-- Column 3 -->
+            <div>
+                <h6 class="font-display font-semibold text-lg text-goldAccent mb-6">Areas We Serve</h6>
+                <ul class="space-y-2 text-sm text-gray-200 mb-6">
+                    <li><a href="/texas-renaissance-festival/" class="hover:text-goldAccent transition-colors">Texas
+                            Renaissance Festival</a></li>
+                    <li><a href="/rv-park-near-montgomery-texas/"
+                            class="hover:text-goldAccent transition-colors">Montgomery, TX Guide</a></li>
+                </ul>
+                <h6 class="font-display font-semibold text-lg text-goldAccent mb-3">Social</h6>
+                <div class="flex space-x-3">
+                    <a href="https://www.facebook.com/NobleForestRVVillage" target="_blank" rel="noopener noreferrer"
+                        class="bg-white/10 p-2 rounded-full hover:bg-accent transition-colors" aria-label="Facebook">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/nobleforest_rv/" target="_blank" rel="noopener noreferrer"
+                        class="bg-white/10 p-2 rounded-full hover:bg-accent transition-colors" aria-label="Instagram">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- Column 4 -->
+            <div>
+                <h6 class="font-display font-semibold text-lg text-goldAccent mb-4">Address & Map</h6>
+                <p class="text-sm text-gray-200 mb-3">22833 FM 1774, Plantersville TX 77363</p>
+                <div class="rounded-xl overflow-hidden h-36 border border-white/20">
+                    <iframe
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCNCO7BlBf60Tfe3xS85wSkT5FQRXwQvHY&q=Noble%20Forest%20RV%20Village%2C%2022833%20FM%201774%2C%20United%20States&zoom=10"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 border-t border-white/10 text-center text-xs text-gray-300">
+            <p>Copyright © 2026 – Noble Forest RV Village. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

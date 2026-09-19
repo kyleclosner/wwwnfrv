@@ -49,6 +49,73 @@ text
 
 (Derived from the visual tree structure applied to the updated URL matrix)
 
+---
+
+## File System & Server Directory Architecture
+
+This section defines the physical repository layout and file-serving architecture, establishing strict separation of concerns between public production assets and internal documentation.
+
+### 1. Directory Tree & Layout Blueprint
+
+```text
+nfrv-static-site/                         # Project Root
+│
+├── _docs/                                # Internal Documentation & Blueprint Rules (DO NOT DEPLOY)
+│   ├── content-strategy.md               # Positioning, voice, tone, vocabulary & copy frameworks
+│   ├── design-guidelines.md              # Technical interaction rules, accessibility targets & CSS standards
+│   ├── implementation_plan.md            # Phase-by-phase migration & refactoring strategy
+│   ├── policies.md                       # Canonical source copy for park rules and regulations
+│   ├── privacy-policy.md                 # Authoritative source policy (including 10DLC mobile disclosures)
+│   ├── Rates.md                          # Flat pricing metrics, all-inclusive terms & unit specs
+│   ├── site-architecture.md              # UX, route hierarchy & physical file mapping (This document)
+│   └── visual-style-guide.md             # Color tokens, typography roles & aesthetic thesis
+│
+├── assets/                               # Shared Static Deliverables
+│   ├── fonts/                            # Locally hosted WOFF2 web fonts (zero external Google CDN lag)
+│   │   ├── inter-v20-latin-*.woff2       # Inter weights (Regular, 500, 600, Italic)
+│   │   └── montserrat-v31-latin-*.woff2  # Montserrat display weights (Regular, 600, 700)
+│   └── images/                           # High-res photography, maps, logos, and vector iconography
+│
+├── CNAME                                 # Custom domain mapping configuration (e.g. nobleforestrv.com)
+├── styles.css                            # Global CSS custom properties, base reset, and custom utilities
+├── wip.txt                               # Temporary scratchpad / staging notes (ignored in production)
+│
+├── index.html                            # Homepage (Target: /)
+├── site-types.html                       # RV Pad Types & Covered Specs (Target: /site-types/)
+├── amenities.html                        # Utility & Recreation Facilities (Target: /amenities/)
+├── rates.html                            # All-Bills-Included Pricing Grid (Target: /rates/)
+├── directions.html                       # Navigation, Map & Regional Routing (Target: /directions/)
+├── policies.html                         # Community Rules & Guest Conduct (Target: /policies/)
+├── privacy-policy.html                   # Privacy Statement & Mobile Data Protections
+├── texas-renaissance-festival.html       # Landing page for Texas RenFest visitors & vendors
+└── rv-park-near-montgomery-texas.html    # SEO landing guide for workforce & regional contractors
+```
+
+### 2. Architectural Principles & File Rules
+
+1. **Isolation of `_docs/`:**
+   * The underscore prefix (`_`) signals that the directory contains metadata, design rules, and planning documents rather than runnable website code.
+   * **Deployment Hygiene:** When deploying to production servers or static hosts, exclude the `_docs/` folder (via `.gitignore`, build exclusion, or publish directory settings) so internal strategies and private notes are never exposed via public URLs.
+
+2. **Flat Root HTML Structure for Clean URL Routing:**
+   * All primary landing pages live directly in the root directory.
+   * Hosting platforms (GitHub Pages, Netlify, Cloudflare Pages, Vercel, or Apache/LiteSpeed via `.htaccess`) rewrite clean paths automatically:
+     * `nobleforestrv.com/site-types.html` rewrites to `nobleforestrv.com/site-types`
+     * `nobleforestrv.com/amenities.html` rewrites to `nobleforestrv.com/amenities`
+   * Internal anchor links across the site should consistently point to clean paths or relative `.html` endpoints as configured by the server.
+
+3. **Asset Referencing Standards:**
+   * **Relative Paths:** Internal pages must reference shared assets using relative paths starting from the root or relative position:
+     * Fonts: `assets/fonts/montserrat-v31-latin-700.woff2`
+     * Images: `assets/images/logo-transparent.png`
+     * Global Styles: `<link rel="stylesheet" href="styles.css">`
+   * **Self-Contained Font Hosting:** The `assets/fonts/` directory contains self-hosted WOFF2 assets to eliminate third-party render-blocking requests, protect user privacy, and ensure maximum performance.
+
+4. **CNAME & Root Configuration:**
+   * The `CNAME` file must exist at the root level containing the primary production domain (`nobleforestrv.com`) for seamless DNS resolution on static hosts.
+
+---
+
 ## **Navigation & Architecture Map**
 
 ### **Header Navigation Structure**

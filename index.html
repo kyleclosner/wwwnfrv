@@ -1,32 +1,548 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noble Forest RV Village | Modern Staging Preview</title>
-    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-    <link href="[https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans&display=swap](https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans&display=swap)" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header class="header">
-        <div class="logo">🌲 Noble Forest RV Village</div>
-        <a href="[https://app.fireflyreservations.com/reserve/property/NobleForestRV](https://app.fireflyreservations.com/reserve/property/NobleForestRV)" target="_blank" class="cta-button">Check Availability</a>
-    </header>
+    <title>Noble Forest RV Village | Top rated RV Park & Campground for RV Living</title>
 
-    <main class="hero">
-        <div class="container">
-            <span class="pill">ALL-BILLS-INCLUDED </span>
-            <h1>Welcome to Your Shaded, Secure Texas Sanctuary</h1>
-            <p>We are rebuilding our online experience from the ground up! Enjoy premium, heavy-duty 40' x 20' covered sites, level concrete pads, and mature natural shade trees near Navasota, Waller, and Tomball, Texas.</p>
-            <p>Attempting to publish a commit w/ changes to github...</p>
-            <div class="badge-row">
-                <div class="badge">✔️ Level Concrete Pads</div>
-                <div class="badge">✔️ Gated Community</div>
-                <div class="badge">✔️ Manage lives Onsite</div>
+    <!-- Load Google Fonts: Montserrat (Display) and Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#48751F',
+                        secondary: '#F3F5F8',
+                        bodyText: '#B37822',
+                        accent: '#D2963E',
+                        goldAccent: '#F5C23F',
+                        greenText: '#024600',
+                        greyAccent: '#F3F3F3',
+                        greyBg: '#E9E9E9',
+                    },
+                    fontFamily: {
+                        display: ['Montserrat', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --color-primary: #48751F;
+            --color-secondary: #F3F5F8;
+            --color-body-text: #B37822;
+            --color-accent: #D2963E;
+            --color-gold-accent: #F5C23F;
+            --color-green-text: #024600;
+            --color-overlay-bg: rgba(0, 0, 0, 0.65);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #212121;
+            background-color: #FFFFFF;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Focus states for accessibility */
+        :focus-visible {
+            outline: 3px solid var(--color-accent);
+            outline-offset: 4px;
+        }
+    </style>
+</head>
+
+<body class="bg-white antialiased selection:bg-accent selection:text-white">
+
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-primary focus:text-white">
+        Skip to main content
+    </a>
+
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-greyAccent shadow-sm">
+        <!-- Top Utility Bar -->
+        <div class="bg-primary text-white text-sm py-2 px-4 sm:px-8 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="tel:9368942079"
+                    class="font-medium hover:text-goldAccent transition-colors flex items-center gap-2">
+                    <span>📞 (936) 894-2079</span>
+                </a>
+            </div>
+            <div class="flex items-center space-x-3">
+                <a href="https://www.facebook.com/NobleForestRVVillage" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-goldAccent transition-colors" aria-label="Facebook">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/nobleforest_rv/" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-goldAccent transition-colors" aria-label="Instagram">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
             </div>
         </div>
+
+        <!-- Main Nav Menu Container -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3">
+                <img src="https://nobleforestrv.com/wp-content/uploads/2023/08/Logo-png-transparent.png"
+                    alt="Noble Forest RV Village Logo" class="h-12 w-auto object-contain">
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden lg:flex items-center space-x-8 font-medium text-gray-700">
+                <a href="/" class="text-primary font-semibold transition-colors">Home</a>
+                <a href="amenities.html" class="hover:text-primary transition-colors">Amenities</a>
+                <a href="site-types.html" class="hover:text-primary transition-colors">Site types</a>
+                <a href="rates.html" class="hover:text-primary transition-colors">Rates</a>
+                <a href="directions.html" class="hover:text-primary transition-colors">Map & Directions</a>
+                <div class="relative group">
+                    <button class="flex items-center gap-1 hover:text-primary transition-colors py-2">
+                        More ▾
+                    </button>
+                    <div
+                        class="absolute top-full left-0 w-56 bg-white shadow-xl rounded-xl py-2 hidden group-hover:block border border-greyAccent">
+                        <a href="directions.html"
+                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-primary">Campground Site Map</a>
+                        <a href="/texas-renaissance-festival/"
+                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-primary">Texas RenFest
+                            Guide</a>
+                        <a href="policies.html" class="block px-4 py-2 text-sm hover:bg-secondary hover:text-primary">Park
+                            Policies</a>
+                        <a href="privacy-policy.html"
+                            class="block px-4 py-2 text-sm hover:bg-secondary hover:text-primary">Privacy Policy</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden lg:block">
+                <a href="https://app.fireflyreservations.com/reserve/property/NobleForestRV" target="_blank"
+                    rel="noopener noreferrer"
+                    class="bg-accent hover:bg-[#be822d] active:scale-95 text-white font-medium px-6 py-3 rounded-lg shadow-md transition-all duration-150">
+                    BOOK NOW
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <section
+            class="relative min-h-[85vh] flex flex-col items-center justify-center text-center px-4 overflow-hidden bg-black text-white"
+            aria-labelledby="hero-heading">
+            <!-- Background Video Wrapper (Embedded YouTube simulation) -->
+            <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-70">
+                <iframe
+                    class="absolute top-1/2 left-1/2 w-[177.78vh] h-[100vh] min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover"
+                    src="https://www.youtube.com/embed/PX3b9HDhIYc?autoplay=1&mute=1&controls=0&rel=0&playsinline=1&loop=1&playlist=PX3b9HDhIYc"
+                    frameborder="0" allow="autoplay; encrypted-media">
+                </iframe>
+            </div>
+
+            <!-- Dark Overlay for Contrast Legibility -->
+            <div class="absolute inset-0 bg-black/60 z-1"></div>
+
+            <!-- Hero Content -->
+            <div class="relative z-10 max-w-4xl mx-auto space-y-6">
+                <h1 id="hero-heading"
+                    class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-tight">
+                    A premier RV Park near Magnolia, Texas
+                </h1>
+                <p class="font-body text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
+                    Whether you're seeking a peaceful retreat, a weekend getaway, or a place to call home, Noble Forest
+                    RV Village is your destination for rest and relaxation.
+                </p>
+                <div class="pt-4">
+                    <a href="https://app.fireflyreservations.com/reserve/property/NobleForestRV" target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center bg-accent hover:bg-[#be822d] active:scale-95 text-white font-medium px-8 py-4 rounded-xl shadow-lg text-lg transition-all duration-150">
+                        Check Availability
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="rounded-2xl overflow-hidden shadow-xl">
+                    <img src="https://nobleforestrv.com/wp-content/uploads/2024/12/rvvcar.jpg"
+                        alt="RV parked under lush mature shade trees at Noble Forest RV Village"
+                        class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="space-y-6">
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-primary">
+                        Where we treat everyone like nobility
+                    </h2>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        Experience the unique atmosphere of our RV campground where your comfort, security, and
+                        enjoyment are our top priorities. Enjoy flat, all-bills-included rates and massive shaded lots.
+                    </p>
+                    <div>
+                        <a href="https://app.fireflyreservations.com/reserve/property/NobleForestRV" target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-block bg-primary hover:bg-[#3d6319] text-white font-medium px-6 py-3 rounded-lg shadow transition-colors">
+                            Book Online
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+            <div class="max-w-7xl mx-auto text-center space-y-4 mb-16">
+                <h2 class="font-display font-bold text-3xl sm:text-4xl text-primary">Monthly RV Spaces</h2>
+                <p class="text-gray-600 text-lg">Year-round and Seasonal RV Living</p>
+            </div>
+
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="bg-secondary rounded-2xl p-8 border border-greyAccent shadow-sm hover:shadow-md transition-shadow">
+                    <img src="https://nobleforestrv.com/wp-content/uploads/2024/01/IMG_2485.jpg"
+                        alt="Fifth Wheel parked at a concrete shaded space"
+                        class="w-full h-64 object-cover rounded-xl mb-6 shadow">
+                    <h3 class="font-display font-bold text-2xl text-primary mb-3">Year-Round and Seasonal RV Living</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Settle into your home away from home with our RV sites featuring concrete pads, ample shade
+                        trees, and friendly neighbors. Our year-round monthly RV spaces offer a perfect balance of
+                        comfort and convenience.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="bg-secondary rounded-2xl p-8 border border-greyAccent shadow-sm hover:shadow-md transition-shadow">
+                    <img src="https://nobleforestrv.com/wp-content/uploads/2024/01/IMG_2487.jpg"
+                        alt="Seasonal RV space surrounded by trees"
+                        class="w-full h-64 object-cover rounded-xl mb-6 shadow">
+                    <h3 class="font-display font-bold text-2xl text-primary mb-3">Seasonal RV Spaces</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Enjoy mild Texas weather and the convenience of being close to Houston, Magnolia, Conroe,
+                        Woodlands, and College Station. Our seasonal RV sites cater to those looking for a temporary
+                        escape during the winter months.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
+            <div class="max-w-7xl mx-auto text-center space-y-4 mb-16">
+                <h2 class="font-display font-bold text-3xl sm:text-4xl text-primary">Premium Amenities</h2>
+                <p class="text-gray-600 text-lg">We provide all the essentials for a perfect stay</p>
+            </div>
+
+            <div class="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div
+                    class="bg-white p-6 rounded-xl shadow-sm text-center flex flex-col items-center justify-center border border-greyAccent">
+                    <span class="text-3xl mb-3">📶</span>
+                    <span class="font-semibold text-gray-800">Fast Wifi</span>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-xl shadow-sm text-center flex flex-col items-center justify-center border border-greyAccent">
+                    <span class="text-3xl mb-3">🚻</span>
+                    <span class="font-semibold text-gray-800">Immaculate Restrooms</span>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-xl shadow-sm text-center flex flex-col items-center justify-center border border-greyAccent">
+                    <span class="text-3xl mb-3">⚡</span>
+                    <span class="font-semibold text-gray-800">Full Hookups</span>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-xl shadow-sm text-center flex flex-col items-center justify-center border border-greyAccent">
+                    <span class="text-3xl mb-3">🐕</span>
+                    <span class="font-semibold text-gray-800">Pet Friendly</span>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-xl shadow-sm text-center flex flex-col items-center justify-center border border-greyAccent">
+                    <span class="text-3xl mb-3">👶</span>
+                    <span class="font-semibold text-gray-800">Kid Friendly</span>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-xl shadow-sm text-center flex flex-col items-center justify-center border border-greyAccent">
+                    <span class="text-3xl mb-3">🛡️</span>
+                    <span class="font-semibold text-gray-800">Gated Community</span>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-xl shadow-sm text-center flex flex-col items-center justify-center border border-greyAccent">
+                    <span class="text-3xl mb-3">♿</span>
+                    <span class="font-semibold text-gray-800">Accessible</span>
+                </div>
+                <div
+                    class="bg-white p-6 rounded-xl shadow-sm text-center flex flex-col items-center justify-center border border-greyAccent">
+                    <span class="text-3xl mb-3">🚿</span>
+                    <span class="font-semibold text-gray-800">Private Showers</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white border-t border-greyAccent/50">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Video Container -->
+                <div class="rounded-2xl overflow-hidden shadow-xl aspect-video relative border-4 border-white">
+                    <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/Bw3rQb-6ChQ?rel=0"
+                        title="Noble Forest RV Village Video Tour" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+                <!-- Text Container -->
+                <div class="space-y-6 lg:pl-8">
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-primary">
+                        Video Tour
+                    </h2>
+                    <div class="text-gray-700 text-lg space-y-2 leading-relaxed">
+                        <p>Take a drive through Noble Forest RV Village and see our premium concrete pads, massive shade
+                            trees, and quiet atmosphere for yourself.</p>
+                        <p class="text-sm font-medium text-gray-500 uppercase tracking-wider pt-2">Filmed August 2024
+                        </p>
+                    </div>
+                    <div class="pt-4">
+                        <a href="/our-story/"
+                            class="inline-flex items-center justify-center bg-secondary hover:bg-greyBg text-primary border border-greyAccent font-medium px-6 py-3 rounded-lg shadow-sm transition-colors active:scale-95 duration-150">
+                            Read Our Story
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-4 sm:px-6 lg:px-8 bg-secondary overflow-hidden border-t border-greyAccent/50">
+            <div class="max-w-7xl mx-auto space-y-12">
+                <div class="text-center">
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-primary">Real Reviews from Real People
+                    </h2>
+                </div>
+
+                <!-- Modern CSS-Only Snap Carousel -->
+                <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 hide-scrollbar px-4"
+                    style="scrollbar-width: none; -ms-overflow-style: none;">
+
+                    <!-- Review 1 -->
+                    <div
+                        class="snap-center shrink-0 w-[85vw] sm:w-[60vw] md:w-[450px] bg-white p-8 rounded-2xl shadow-sm border border-greyAccent flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-1 mb-4 text-goldAccent text-xl">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed mb-8">"I stayed here with my wife for a whole month
+                                and absolutely loved the place. It has a lot of trees. I liked that you can enjoy a walk
+                                around the park, it's kids friendly, quiet and cozy. Great showers... I would definitely
+                                recommend it."</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold font-display">
+                                G</div>
+                            <p class="font-bold text-primary font-display">Gerardo Muñoz</p>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div
+                        class="snap-center shrink-0 w-[85vw] sm:w-[60vw] md:w-[450px] bg-white p-8 rounded-2xl shadow-sm border border-greyAccent flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-1 mb-4 text-goldAccent text-xl">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed mb-8">"Noble Forest RV village in Plantersville, TX
+                                was a wonderful RV Park to stay at. I travel for work and stayed there for about 3
+                                months. The staff were very friendly... Facilities are nice and clean, the park has free
+                                WiFi."</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold font-display">
+                                N</div>
+                            <p class="font-bold text-primary font-display">Nicholas McDonald</p>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div
+                        class="snap-center shrink-0 w-[85vw] sm:w-[60vw] md:w-[450px] bg-white p-8 rounded-2xl shadow-sm border border-greyAccent flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-1 mb-4 text-goldAccent text-xl">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed mb-8">"Wonderful place. We stay here when we are in
+                                town for the Renaissance Festival. The staff is very friendly and they keep the place
+                                well clean and maintained."</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold font-display">
+                                R</div>
+                            <p class="font-bold text-primary font-display">Robert Neundrof</p>
+                        </div>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div
+                        class="snap-center shrink-0 w-[85vw] sm:w-[60vw] md:w-[450px] bg-white p-8 rounded-2xl shadow-sm border border-greyAccent flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-1 mb-4 text-goldAccent text-xl">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed mb-8">"The owners are so kind. They made my stay on
+                                and off of 4 years amazing. I left my RV and when I returned... it was just as I left
+                                it. Always felt safe. Perfect country area. I would highly recommend."</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold font-display">
+                                B</div>
+                            <p class="font-bold text-primary font-display">Becky Birt</p>
+                        </div>
+                    </div>
+
+                    <!-- Review 5 -->
+                    <div
+                        class="snap-center shrink-0 w-[85vw] sm:w-[60vw] md:w-[450px] bg-white p-8 rounded-2xl shadow-sm border border-greyAccent flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-1 mb-4 text-goldAccent text-xl">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed mb-8">"We love Noble Forest. We have stayed here for
+                                several years when visiting the Texas Renaissance Festival. It has changed ownership
+                                recently and the new owners are working hard to clean up and make improvements."</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold font-display">
+                                D</div>
+                            <p class="font-bold text-primary font-display">Donna Hunt</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Desktop Scroll Hint -->
+                <div class="text-center text-gray-400 text-sm hidden md:block">
+                    &larr; Swipe or scroll to see more reviews &rarr;
+                </div>
+            </div>
+
+            <style>
+                /* Helper to hide scrollbar across browsers while keeping functionality */
+                .hide-scrollbar::-webkit-scrollbar {
+                    display: none;
+                }
+            </style>
+        </section>
+
+        <section class="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+            <div class="max-w-4xl mx-auto text-center space-y-8">
+                <h2 class="font-display font-bold text-3xl sm:text-5xl text-primary leading-tight">
+                    Ready to see for yourself?
+                </h2>
+                <p class="text-gray-700 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
+                    Make a reservation online or call or text us at <a href="tel:9368942079"
+                        class="font-semibold text-bodyText hover:text-accent transition-colors">(936) 894-2079</a>. We
+                    can't wait to welcome you to your new home away from home!
+                </p>
+                <div class="pt-4">
+                    <a href="https://app.fireflyreservations.com/reserve/property/NobleForestRV" target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center bg-accent hover:bg-[#be822d] active:scale-95 text-white font-medium px-8 py-4 rounded-xl shadow-lg text-lg transition-all duration-150">
+                        Book Online
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
+
+    <footer class="bg-primary text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8 border-t-4 border-accent">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+            <!-- Column 1 -->
+            <div class="space-y-4">
+                <img src="https://nobleforestrv.com/wp-content/uploads/2023/08/Logo-png-transparent-300x159.png"
+                    alt="Noble Forest Logo" class="h-12 w-auto brightness-0 invert">
+                <p class="text-gray-200 text-sm leading-relaxed">
+                    Noble Forest RV Village offers overnight camping, short term RV stays, and long term RV parking
+                    sites, with full hookups, in a family friendly community under mature shade trees.
+                </p>
+            </div>
+            <!-- Column 2 -->
+            <div>
+                <h6 class="font-display font-semibold text-lg text-goldAccent mb-4">Useful Links</h6>
+                <ul class="space-y-2 text-sm text-gray-200">
+                    <li><a href="/" class="hover:text-goldAccent transition-colors">Home</a></li>
+                    <li><a href="amenities.html" class="hover:text-goldAccent transition-colors">Amenities</a></li>
+                    <li><a href="site-types.html" class="hover:text-goldAccent transition-colors">SiteTypes</a></li>
+                    <li><a href="rates.html" class="hover:text-goldAccent transition-colors">Rates</a></li>
+                    <li><a href="privacy-policy.html" class="hover:text-goldAccent transition-colors">Privacy Policy</a>
+                    </li>
+                    <li><a href="policies.html" class="hover:text-goldAccent transition-colors">Policy</a></li>
+                </ul>
+            </div>
+            <!-- Column 3 -->
+            <div>
+                <h6 class="font-display font-semibold text-lg text-goldAccent mb-4">Areas We Serve</h6>
+                <ul class="space-y-2 text-sm text-gray-200 mb-6">
+                    <li><a href="/texas-renaissance-festival/" class="hover:text-goldAccent transition-colors">Texas
+                            Renaissance Festival</a></li>
+                    <li><a href="/rv-park-near-montgomery-texas/"
+                            class="hover:text-goldAccent transition-colors">Montgomery, TX Guide</a></li>
+                </ul>
+                <h6 class="font-display font-semibold text-lg text-goldAccent mb-3">Social</h6>
+                <div class="flex space-x-3">
+                    <a href="https://www.facebook.com/NobleForestRVVillage" target="_blank" rel="noopener noreferrer"
+                        class="bg-white/10 p-2 rounded-full hover:bg-accent transition-colors" aria-label="Facebook">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/nobleforest_rv/" target="_blank" rel="noopener noreferrer"
+                        class="bg-white/10 p-2 rounded-full hover:bg-accent transition-colors" aria-label="Instagram">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- Column 4 -->
+            <div>
+                <h6 class="font-display font-semibold text-lg text-goldAccent mb-4">Address & Map</h6>
+                <p class="text-sm text-gray-200 mb-3">22833 FM 1774, Plantersville TX 77363</p>
+                <div class="rounded-xl overflow-hidden h-36 border border-white/20">
+                    <iframe
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCNCO7BlBf60Tfe3xS85wSkT5FQRXwQvHY&q=Noble%20Forest%20RV%20Village%2C%2022833%20FM%201774%2C%20United%20States&zoom=10"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 border-t border-white/10 text-center text-xs text-gray-300">
+            <p>Copyright © 2026 – Noble Forest RV Village. All rights reserved.</p>
+        </div>
+    </footer>
+
 </body>
+
 </html>
