@@ -1,0 +1,34 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor / IDE Directories & Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local & Environment / Credentials
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Node / Package Manager Dependencies & Logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build / Output Folders
+dist/
+build/
+out/

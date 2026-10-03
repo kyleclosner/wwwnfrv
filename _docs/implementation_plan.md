@@ -27,7 +27,21 @@
 
 ---
 
-## Phase 3: Context Loading & Stack Definition — COMPLETE
+## Phase 3: Deploy to Staging (`staging.nobleforestrv.com`) — COMPLETE
+*Deploy the current static build to the live staging environment to review in a real browser context before final audits and production launch.*
+
+*   **COMPLETE 1. Staging Domain & CNAME Configuration:** Verify `CNAME` is set to `staging.nobleforestrv.com` in project root.
+*   **COMPLETE 2. Git Commit & Push:** Ensure all current static HTML files, CSS, assets, and documentation are committed and pushed to `origin/main` on GitHub (`https://github.com/kyleclosner/wwwnfrv`).
+*   **COMPLETE 3. GitHub Pages / Staging Host Verification:** Confirm GitHub Pages deployment builds successfully from the repository and custom domain SSL certificate is active.
+*   **COMPLETE 4. Live Staging Smoke Test:**
+    *   Verify all page routes resolve live (`/`, `/amenities.html`, `/rates.html`, `/directions.html`, `/policies.html`, `/privacy-policy.html`, `/site-types.html`).
+    *   Verify responsive navigation (mobile menu hamburger toggle & desktop nav).
+    *   Verify external links (Firefly reservation portal opening with `target="_blank"`).
+    *   Verify Google Maps embed and asset loading.
+
+---
+
+## Phase 4: Context Loading & Stack Definition — COMPLETE
 *Using Tailwind CSS via `<script>` CDN config with custom theme extensions, Google Fonts, and standard HTML5 semantic architecture.*
 
 *   **COMPLETE Stack Definition:** Single-file static HTML documents with no PHP, database, or WordPress dependencies.
@@ -35,18 +49,19 @@
 
 ---
 
-## Phase 4: Verification, Asset Audit & Cleanup — NEXT STEPS FOR TOMORROW
+## Phase 5: Verification, Asset Audit & Cleanup — NEXT STEPS
 *Ensuring all assets, local image paths, and routing perform flawlessly.*
 
 *   **1. Refactor `site-types.html` (If needed):** Finalize any remaining content or styling adjustments on `site-types.html`.
 *   **2. Audit External Image Dependencies:** Replace any remaining remote WordPress image URLs (`https://nobleforestrv.com/wp-content/uploads/...`) with optimized local asset paths in `/assets/`.
-*   **3. Local Server Verification:** Launch `python3 -m http.server 8080` and run browser tests across desktop/mobile viewports to verify visual perfection.
+*   **3. Local & Staging Cross-Browser Verification:** Test across desktop/mobile viewports to verify visual perfection.
 *   **4. Final Code Review:** Ensure all HTML files validate cleanly and all navigation states (`aria-current="page"`) are correctly applied per page.
 
 ---
 
-## Phase 5: Deployment & Handholder
-*Prepare for production deployment.*
+## Phase 6: Production Deployment & Cutover
+*Prepare for final production release.*
 
-*   **Git Commit:** Commit clean static code to repository.
-*   **Hosting:** Deploy to static host (GitHub Pages, Netlify, Vercel, or static web server).
+*   **1. Final Production Sign-off:** Complete audit of staging site.
+*   **2. Domain Cutover:** Point production domain (`nobleforestrv.com`) to hosting target / update DNS and CNAME records.
+*   **3. Post-Launch Verification:** Verify SSL, booking funnel, and redirects from old WordPress URLs.
