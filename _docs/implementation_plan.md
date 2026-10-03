@@ -22,8 +22,10 @@
 *   **COMPLETE `directions.html`:** Refactored with Google Maps embed, distance cards, and location details.
 *   **COMPLETE `privacy-policy.html`:** Refactored to match exact wording of `privacy-policy.md` (including SMS Communication opt-out text).
 *   **COMPLETE `policies.html`:** Refactored to match exact text & section ordering of `policies.md` (Check-In, Check-Out, General Conduct, Noise, Vehicles, Site Setup, Site Appearance, Safety, Fires, Pets, Wifi, Payments, Electric Utility, Background Check, Right to Terminate, Cancellation Policy, and Terms 1–17).
-*   **RESUME HERE `site-types.html`:** Needs raw WP HTML content review/refactoring into clean Tailwind static markup to complete the page refactoring phase.
-*   ** RENFEST, any other pages :**.
+*   **COMPLETE `rv-park-near-montgomery-texas.html`:** Refactored regional long-term living guide with 10 feature cards, why-choose-us pillars, local area distance table, and keyless map.
+*   **COMPLETE `texas-renaissance-festival.html`:** Refactored RenFest landing page with proximity highlights (&lt; 1 mile), real visitor reviews, site specifications, video tour, and keyless map.
+*   **COMPLETE `confirmation.html`:** Refactored post-booking confirmation page with guest portal guide, review links (Google/Yelp), and comprehensive FAQs.
+*   **REVIEW `site-types.html`:** Verify content and styling per Phase 5.
 
 ---
 

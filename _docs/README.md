@@ -16,7 +16,7 @@ git status
 git add .
 
 # 3. Commit the changes with a descriptive message
-git commit -m "Update site: keyless maps, .gitignore, and staging documentation"
+git commit -m "_"
 
 # 4. Push changes to GitHub (updates staging live)
 git push origin main
