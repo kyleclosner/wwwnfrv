@@ -141,11 +141,41 @@
                 </div>
             </nav>
 
-            <!-- CTA Button -->
-            <div class="hidden lg:block">
+            <!-- CTA Button & Mobile Toggle -->
+            <div class="flex items-center gap-4">
+                <div class="hidden lg:block">
+                    <a href="https://app.fireflyreservations.com/reserve/property/NobleForestRV" target="_blank"
+                        rel="noopener noreferrer"
+                        class="bg-accent hover:bg-[#be822d] active:scale-95 text-white font-medium px-6 py-3 rounded-lg shadow-md transition-all duration-150">
+                        BOOK NOW
+                    </a>
+                </div>
+                <button id="mobile-menu-toggle" type="button"
+                    class="lg:hidden p-2 rounded-lg text-gray-700 hover:text-primary hover:bg-secondary focus:outline-none"
+                    aria-label="Toggle mobile menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-greyAccent bg-white px-4 pt-3 pb-6 space-y-2">
+            <a href="/" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">Home</a>
+            <a href="amenities.html" class="block px-3 py-2 rounded-md font-semibold text-primary bg-secondary" aria-current="page">Amenities</a>
+            <a href="site-types.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">Site types</a>
+            <a href="rates.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">Rates</a>
+            <a href="directions.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">Map & Directions</a>
+            <a href="texas-renaissance-festival.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">Texas RenFest Guide</a>
+            <a href="rv-park-near-montgomery-texas.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">RV Park near Montgomery</a>
+            <a href="policies.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">Park Policies</a>
+            <a href="privacy-policy.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">Privacy Policy</a>
+            <div class="pt-3">
                 <a href="https://app.fireflyreservations.com/reserve/property/NobleForestRV" target="_blank"
                     rel="noopener noreferrer"
-                    class="bg-accent hover:bg-[#be822d] active:scale-95 text-white font-medium px-6 py-3 rounded-lg shadow-md transition-all duration-150">
+                    class="block text-center bg-accent hover:bg-[#be822d] text-white font-medium px-6 py-3 rounded-lg shadow-md">
                     BOOK NOW
                 </a>
             </div>
@@ -176,9 +206,6 @@
         <section class="py-16 px-4 sm:px-6 lg:px-8 bg-secondary">
             <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <div class="space-y-4">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
-                        Full Service
-                    </span>
                     <h2 class="font-display text-3xl sm:text-4xl font-bold text-accent">
                         Full Hook up
                     </h2>
@@ -212,9 +239,6 @@
                         loading="lazy">
                 </div>
                 <div class="space-y-4 lg:order-2 order-1">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent">
-                        Included Free
-                    </span>
                     <h2 class="font-display text-3xl sm:text-4xl font-bold text-primary">
                         FREE High Speed Internet
                     </h2>
@@ -236,9 +260,6 @@
         <section class="py-16 px-4 sm:px-6 lg:px-8 bg-secondary">
             <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <div class="space-y-4">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
-                        Pet Friendly
-                    </span>
                     <h2 class="font-display text-3xl sm:text-4xl font-bold text-primary">
                         Dog Park
                     </h2>
@@ -272,9 +293,6 @@
                         loading="lazy">
                 </div>
                 <div class="space-y-4 lg:order-2 order-1">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
-                        24/7 Access
-                    </span>
                     <h2 class="font-display text-3xl sm:text-4xl font-bold text-primary">
                         Laundry Room
                     </h2>
@@ -296,9 +314,6 @@
         <section class="py-16 px-4 sm:px-6 lg:px-8 bg-secondary">
             <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <div class="space-y-4">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
-                        Secure & Safe
-                    </span>
                     <h2 class="font-display text-3xl sm:text-4xl font-bold text-primary">
                         Gated Community
                     </h2>
@@ -332,9 +347,6 @@
                         loading="lazy">
                 </div>
                 <div class="space-y-4 lg:order-2 order-1">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
-                        Clean & Accessible
-                    </span>
                     <h2 class="font-display text-3xl sm:text-4xl font-bold text-primary">
                         Private Restrooms with Showers
                     </h2>
@@ -356,9 +368,6 @@
         <section class="py-16 px-4 sm:px-6 lg:px-8 bg-secondary">
             <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <div class="space-y-4">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent">
-                        Family Fun
-                    </span>
                     <h2 class="font-display text-3xl sm:text-4xl font-bold text-primary">
                         Family Friendly Perks
                     </h2>
@@ -392,9 +401,6 @@
                         loading="lazy">
                 </div>
                 <div class="space-y-4 lg:order-2 order-1">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
-                        Community Space
-                    </span>
                     <h2 class="font-display text-3xl sm:text-4xl font-bold text-primary">
                         Rec Room
                     </h2>
@@ -416,9 +422,6 @@
         <section class="py-16 px-4 sm:px-6 lg:px-8 bg-secondary">
             <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <div class="space-y-4">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
-                        ADA Wheelchair Accessible
-                    </span>
                     <h2 class="font-display text-3xl sm:text-4xl font-bold text-primary">
                         Accessible Facilities
                     </h2>
@@ -452,9 +455,6 @@
                         loading="lazy">
                 </div>
                 <div class="space-y-4 lg:order-2 order-1">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent">
-                        Spacious & Varied
-                    </span>
                     <h2 class="font-display text-3xl sm:text-4xl font-bold text-primary">
                         Premium Sites
                     </h2>
@@ -476,9 +476,6 @@
         <section class="py-16 px-4 sm:px-6 lg:px-8 bg-secondary">
             <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <div class="space-y-4">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
-                        Nighttime Illumination
-                    </span>
                     <h2 class="font-display text-3xl sm:text-4xl font-bold text-primary">
                         Safety Lighting
                     </h2>
@@ -512,9 +509,6 @@
                         loading="lazy">
                 </div>
                 <div class="space-y-4 lg:order-2 order-1">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
-                        Natural Canopy
-                    </span>
                     <h2 class="font-display text-3xl sm:text-4xl font-bold text-primary">
                         Shade Trees
                     </h2>
@@ -618,10 +612,24 @@
                 </div>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto pt-8 border-t border-white/10 text-center text-xs text-gray-300">
+        <div class="max-w-7xl mx-auto pt-8 text-center text-sm text-gray-200">
             <p>Copyright © 2026 – Noble Forest RV Village. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Mobile Navigation Toggle Script -->
+    <script>
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
 
 </body>
 

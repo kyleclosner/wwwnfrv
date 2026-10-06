@@ -22,6 +22,11 @@ git commit -m "_"
 git push origin main
 ```
 
+``` bash
+# 5. View the site locally
+python3 -m http.server 8000
+```
+
 > **Helpful Tip:** After running `git push origin main`, visit [https://staging.nobleforestrv.com](https://staging.nobleforestrv.com) to see your live changes!
 
 ---

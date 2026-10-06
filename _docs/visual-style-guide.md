@@ -111,7 +111,37 @@ The following hex codes are pulled directly from the source of truth (Elementor 
 Clean white cardstock (`#FFFFFF`). Substantial but friendly. Features a subtle, diffuse drop shadow (`rgba(0,0,0,0.08)`) and rounded corners (`12px`). Hovering feels like sliding the card slightly toward the user.
 
 **Section Dividers (The Organic Wave):**
-Rather than harsh, straight horizontal lines separating sections, use the soft, organic SVG wave borders. This mimics rolling hills, alternating between `--color-bg-kit` (`#FFFFFF`) and `--color-secondary` (`#F3F5F8`), reinforcing the "nature/forest" aesthetic while remaining modern.
+Rather than harsh, straight horizontal lines or flat border rules separating sections, use soft, organic SVG wave dividers. This mimics gentle rolling hills and natural forest topography, seamlessly transitioning between `--color-bg-kit` (`#FFFFFF`) and `--color-secondary` (`#F3F5F8`) while reinforcing the premium "nature/forest" aesthetic.
+
+#### Rules & Standards:
+1. **Full-Bleed Placement Only:** Wave dividers must be placed directly between alternating full-width `<section>` elements at the root of `<main>`. Never place wave dividers inside constrained cards, grid columns, or between sections sharing the same background color.
+2. **Seamless Color Mechanics:** The SVG path geometry fills from the top down and leaves the lower contoured edge transparent. Seamless transitions are achieved through two matching colors:
+   - The **SVG text color** (`fill="currentColor"`) must match the **preceding section's** background.
+   - The **outer wrapper background** must match the **following section's** background.
+3. **Responsive Sizing:** Use `h-10 sm:h-16 lg:h-20` on the SVG to scale smoothly from mobile (`40px`) to desktop (`80px`) without vertical distortion. Always include `preserveAspectRatio="none"` and `viewBox="0 0 1000 100"`.
+4. **Accessibility & Layout Hygiene:** The wrapper `<div>` must specify `w-full overflow-hidden leading-none` and `aria-hidden="true"` so screen readers ignore the decorative graphic and no inline font gaps appear.
+
+#### Implementation Snippets:
+
+**Transition A: White (`#FFFFFF`) to Secondary Fog (`#F3F5F8`)**
+```html
+<!-- Wave Divider (White to Secondary) -->
+<div class="w-full overflow-hidden leading-none bg-secondary" aria-hidden="true">
+    <svg class="relative block w-full h-10 sm:h-16 lg:h-20 text-white" viewBox="0 0 1000 100" preserveAspectRatio="none">
+        <path fill="currentColor" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
+    </svg>
+</div>
+```
+
+**Transition B: Secondary Fog (`#F3F5F8`) to White (`#FFFFFF`)**
+```html
+<!-- Wave Divider (Secondary to White) -->
+<div class="w-full overflow-hidden leading-none bg-white" aria-hidden="true">
+    <svg class="relative block w-full h-10 sm:h-16 lg:h-20 text-secondary" viewBox="0 0 1000 100" preserveAspectRatio="none">
+        <path fill="currentColor" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
+    </svg>
+</div>
+```
 
 **Data Tables (Rates):**
 High-contrast, alternating row colors (zebra striping using `#F3F3F3` or `#E9E9E9`) for extreme readability. The header row acts as a solid, structural green beam (`#48751F`) holding the data together.

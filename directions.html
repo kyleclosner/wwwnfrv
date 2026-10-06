@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map & Directions | Noble Forest RV Village - Plantersville, TX</title>
+    <title>Directions | Noble Forest RV Village - Plantersville, TX</title>
     <meta name="description"
         content="Find easy driving directions and local area distance guides to Noble Forest RV Village in Plantersville, TX. Located less than 1 mile from the Texas Renaissance Festival and close to Magnolia, Montgomery, and Navasota.">
 
@@ -122,8 +122,7 @@
                 <a href="amenities.html" class="hover:text-primary transition-colors">Amenities</a>
                 <a href="site-types.html" class="hover:text-primary transition-colors">Site types</a>
                 <a href="rates.html" class="hover:text-primary transition-colors">Rates</a>
-                <a href="directions.html" class="text-primary font-semibold transition-colors" aria-current="page">Map &
-                    Directions</a>
+                <a href="directions.html" class="text-primary font-semibold transition-colors" aria-current="page">Directions</a>
                 <div class="relative group">
                     <button class="flex items-center gap-1 hover:text-primary transition-colors py-2">
                         More ▾
@@ -145,11 +144,41 @@
                 </div>
             </nav>
 
-            <!-- CTA Button -->
-            <div class="hidden lg:block">
+            <!-- CTA Button & Mobile Toggle -->
+            <div class="flex items-center gap-4">
+                <div class="hidden lg:block">
+                    <a href="https://app.fireflyreservations.com/reserve/property/NobleForestRV" target="_blank"
+                        rel="noopener noreferrer"
+                        class="bg-accent hover:bg-[#be822d] active:scale-95 text-white font-medium px-6 py-3 rounded-lg shadow-md transition-all duration-150">
+                        BOOK NOW
+                    </a>
+                </div>
+                <button id="mobile-menu-toggle" type="button"
+                    class="lg:hidden p-2 rounded-lg text-gray-700 hover:text-primary hover:bg-secondary focus:outline-none"
+                    aria-label="Toggle mobile menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-greyAccent bg-white px-4 pt-3 pb-6 space-y-2">
+            <a href="/" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">Home</a>
+            <a href="amenities.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">Amenities</a>
+            <a href="site-types.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">Site types</a>
+            <a href="rates.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">Rates</a>
+            <a href="directions.html" class="block px-3 py-2 rounded-md font-semibold text-primary bg-secondary" aria-current="page">Directions</a>
+            <a href="texas-renaissance-festival.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">Texas RenFest Guide</a>
+            <a href="rv-park-near-montgomery-texas.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">RV Park near Montgomery</a>
+            <a href="policies.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">Park Policies</a>
+            <a href="privacy-policy.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">Privacy Policy</a>
+            <div class="pt-3">
                 <a href="https://app.fireflyreservations.com/reserve/property/NobleForestRV" target="_blank"
                     rel="noopener noreferrer"
-                    class="bg-accent hover:bg-[#be822d] active:scale-95 text-white font-medium px-6 py-3 rounded-lg shadow-md transition-all duration-150">
+                    class="block text-center bg-accent hover:bg-[#be822d] text-white font-medium px-6 py-3 rounded-lg shadow-md">
                     BOOK NOW
                 </a>
             </div>
@@ -161,7 +190,7 @@
         <section class="bg-primary text-white py-16 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
             <div class="max-w-4xl mx-auto space-y-4 relative z-10">
                 <h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-white">
-                    Map & Directions
+                    Directions
                 </h1>
                 <p class="text-xl sm:text-2xl text-goldAccent font-medium max-w-2xl mx-auto">
                     Easy Access Off FM 1774 in Plantersville, Texas
@@ -179,10 +208,6 @@
                 <!-- Location Info Card -->
                 <div class="bg-secondary rounded-3xl p-8 border border-greyAccent shadow-sm space-y-6">
                     <div class="space-y-2">
-                        <span
-                            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
-                            Location Anchor
-                        </span>
                         <h2 class="font-display text-2xl font-bold text-primary">Noble Forest RV Village</h2>
                         <p class="text-gray-700 text-lg font-medium leading-snug">
                             22833 FM 1774<br>
@@ -234,12 +259,10 @@
             </div>
         </section>
 
-        <!-- Wave Divider -->
-        <div class="w-full overflow-hidden leading-none opacity-30 text-primary py-2" aria-hidden="true">
-            <svg class="w-full h-8" viewBox="0 0 1000 100" preserveAspectRatio="none">
-                <path fill="currentColor"
-                    d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z">
-                </path>
+        <!-- Wave Divider (White to Secondary) -->
+        <div class="w-full overflow-hidden leading-none bg-secondary" aria-hidden="true">
+            <svg class="relative block w-full h-10 sm:h-16 lg:h-20 text-white" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                <path fill="currentColor" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
             </svg>
         </div>
 
@@ -335,8 +358,35 @@
             </div>
         </section>
 
+        <!-- Wave Divider (Secondary to White) -->
+        <div class="w-full overflow-hidden leading-none bg-white" aria-hidden="true">
+            <svg class="relative block w-full h-10 sm:h-16 lg:h-20 text-secondary" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                <path fill="currentColor" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
+            </svg>
+        </div>
+
+        <!-- Campground Map Section -->
+        <section class="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+            <div class="max-w-5xl mx-auto space-y-12">
+                <div class="text-center space-y-4">
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-primary">Campground Map</h2>
+                    <p class="text-gray-700 text-lg max-w-2xl mx-auto">All sites have full hookups with 50 amp, 30 amp, 115 volt electric, water, and sewer.</p>
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-xl bg-white border border-greyAccent p-2 sm:p-4">
+                    <img src="https://nobleforestrv.com/wp-content/uploads/2024/08/Noble-Forest-site-map-2024-08-16.png" alt="Map of Noble Forest RV Village outlining the layout of different site types" class="w-full h-auto rounded-xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- Wave Divider (White to Secondary) -->
+        <div class="w-full overflow-hidden leading-none bg-secondary" aria-hidden="true">
+            <svg class="relative block w-full h-10 sm:h-16 lg:h-20 text-white" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                <path fill="currentColor" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
+            </svg>
+        </div>
+
         <!-- CTA Reservation Section -->
-        <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white border-t border-greyAccent">
+        <section class="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
             <div class="max-w-4xl mx-auto text-center space-y-8">
                 <h2 class="font-display font-bold text-3xl sm:text-5xl text-primary leading-tight">
                     Planning your visit?
@@ -421,10 +471,24 @@
                 </div>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto pt-8 border-t border-white/10 text-center text-xs text-gray-300">
+        <div class="max-w-7xl mx-auto pt-8 text-center text-sm text-gray-200">
             <p>Copyright © 2026 – Noble Forest RV Village. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Mobile Navigation Toggle Script -->
+    <script>
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
 
 </body>
 
