@@ -189,6 +189,14 @@
         <!-- Hero Header -->
         <section class="bg-primary text-white py-16 md:py-24 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden"
             aria-labelledby="hero-title">
+            <!-- Background Image & Contrast Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="images/trf-families-hero.jpg"
+                    alt="Families in Renaissance Festival costumes at Noble Forest RV Village"
+                    class="w-full h-full object-cover object-[center_60%] scale-105">
+                <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-primary/85 to-primary"></div>
+            </div>
+
             <div class="max-w-4xl mx-auto space-y-6 relative z-10">
                 <h1 id="hero-title" class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
                     RV Park with Full Hookups near Texas Renaissance Festival
@@ -365,11 +373,11 @@
 
                     <!-- Side Image Card -->
                     <div class="bg-white rounded-3xl p-6 border border-greyAccent shadow-md space-y-4">
-                        <img src="images/renfest-families-Medium-1.jpeg"
-                            alt="Two families in renaissance costumes standing in front of RVs at Noble Forest"
+                        <img src="images/trf-camper-kilt.jpg"
+                            alt="Noble Forest RV camper dressed in Scottish Renaissance attire standing with his truck and RV"
                             class="w-full h-auto rounded-2xl object-cover shadow-sm">
                         <p class="text-center text-sm text-gray-600 italic">
-                            Families and performers make Noble Forest their home base year after year.
+                            Campers, performers, and fairgoers make Noble Forest their home base year after year.
                         </p>
                     </div>
                 </div>
@@ -494,17 +502,22 @@
         <section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-secondary" aria-labelledby="dream-site-heading">
             <div class="max-w-7xl mx-auto space-y-12">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <!-- Image Card -->
-                    <div class="rounded-3xl overflow-hidden shadow-xl border border-greyAccent bg-white">
-                        <img src="images/covered-rv-site-renfest.jpg"
-                            alt="Class A motorhome parked under a protective covered RV structure with concrete pad at Noble Forest RV Village"
-                            class="w-full h-auto rounded-3xl object-cover shadow-sm">
+                    <!-- Video Embed -->
+                    <div class="rounded-3xl overflow-hidden shadow-xl border border-greyAccent bg-black aspect-video flex items-center justify-center">
+                        <iframe class="w-full h-full"
+                            src="https://www.youtube-nocookie.com/embed/hbuHbzJjbwQ"
+                            title="Texas Renaissance Festival Commute &amp; Noble Forest RV Village"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen loading="lazy"></iframe>
                     </div>
 
                     <!-- Content & Site Specs -->
                     <div class="space-y-6">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary">
+                            Prime Location Off FM 1774
+                        </span>
                         <h2 id="dream-site-heading" class="font-display text-3xl sm:text-4xl font-bold text-primary leading-tight">
-                            The perfect RV site to visit Texas Renaissance Festival
+                            Find Your Dream Site During Texas RenFair
                         </h2>
                         <p class="text-gray-700 text-lg leading-relaxed">
                             We have the perfect assortment of sites whether you're bringing a small travel trailer, big rig, or camping alongside friends:
@@ -537,7 +550,7 @@
                             <a href="https://app.fireflyreservations.com/reserve/property/NobleForestRV" target="_blank"
                                 rel="noopener noreferrer"
                                 class="inline-flex items-center justify-center bg-accent hover:bg-[#be822d] active:scale-95 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition-all duration-150">
-                                Reserve a Site for RenFest
+                                Reserve Your RenFest Site
                             </a>
                             <a href="rates.html"
                                 class="inline-flex items-center justify-center bg-white hover:bg-secondary border-2 border-primary text-primary font-semibold px-8 py-4 rounded-xl transition-all duration-150">

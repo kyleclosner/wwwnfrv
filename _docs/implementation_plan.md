@@ -27,6 +27,7 @@
 *   **COMPLETE `confirmation.html`:** Refactored post-booking confirmation page with guest portal guide, review links (Google/Yelp), and comprehensive FAQs.
 *   **REVIEW `site-types.html`:** Verify content and styling per Phase 5.
 
+
 ---
 
 ## Phase 3: Deploy to Staging (`staging.nobleforestrv.com`) — COMPLETE
@@ -35,19 +36,20 @@
 *   **COMPLETE 1. Staging Domain & CNAME Configuration:** Verify `CNAME` is set to `staging.nobleforestrv.com` in project root.
 *   **COMPLETE 2. Git Commit & Push:** Ensure all current static HTML files, CSS, assets, and documentation are committed and pushed to `origin/main` on GitHub (`https://github.com/kyleclosner/wwwnfrv`).
 *   **COMPLETE 3. GitHub Pages / Staging Host Verification:** Confirm GitHub Pages deployment builds successfully from the repository and custom domain SSL certificate is active.
-*   **COMPLETE 4. Live Staging Smoke Test:**
+*   **WIP  4. Live Staging Smoke Test:**
     *   Verify all page routes resolve live (`/`, `/amenities.html`, `/rates.html`, `/directions.html`, `/policies.html`, `/privacy-policy.html`, `/site-types.html`).
     *   Verify responsive navigation (mobile menu hamburger toggle & desktop nav).
     *   Verify external links (Firefly reservation portal opening with `target="_blank"`).
-    *   Verify Google Maps embed and asset loading.
+    *   **WIP** Verify Google Maps embed and asset loading.
 
 ---
 
-## Phase 4: Context Loading & Stack Definition — COMPLETE
+## Phase 4: Context Loading & Stack Definition — in progress
 *Using Tailwind CSS via `<script>` CDN config with custom theme extensions, Google Fonts, and standard HTML5 semantic architecture.*
 
 *   **COMPLETE Stack Definition:** Single-file static HTML documents with no PHP, database, or WordPress dependencies.
 *   **COMPLETE Cross-Page Link Synchronization:** All header nav dropdowns and footer links point directly to `.html` static paths (`amenities.html`, `rates.html`, `directions.html`, `privacy-policy.html`, `policies.html`, `site-types.html`).
+*  make a single common header and footer that are included.
 
 ---
 
@@ -63,7 +65,7 @@
 
 ## Phase 6: Production Deployment & Cutover
 *Prepare for final production release.*
-
+*   pre-Work question: where will my site be hosted from? surely I want it hosted from blue host not from github pages.
 *   **1. Final Production Sign-off:** Complete audit of staging site.
 *   **2. Domain Cutover:** Point production domain (`nobleforestrv.com`) to hosting target / update DNS and CNAME records.
 *   **3. Post-Launch Verification:** Verify SSL, booking funnel, and redirects from old WordPress URLs.

@@ -80,7 +80,6 @@ Here is what each key markdown file in this folder governs:
 * **Key Content:**
   * **Brand Color Palette:** Primary Forest Pine (`#48751F`), Secondary Soft White (`#F3F5F8`), Accent Gold (`#D2963E`), Dark Charcoal (`#1F2937`), and Neutral Slate (`#4B5563`).
   * **Typography:** Montserrat (headings) and Inter (body copy) via Google Fonts.
-  * **Visual Elements:** Tailwind configuration script, organic SVG wave dividers between alternating section backgrounds, button variants, and card styling.
 
 ---
 

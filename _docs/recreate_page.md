@@ -1,0 +1,27 @@
+Act as an expert frontend engineer. We are migrating a bloated WordPress/Elementor website into a lightning-fast, clean, static HTML/CSS architecture using Tailwind CSS. 
+
+Below is the raw, rendered `<body>` HTML for one of the  Noble Forest RV website pages.
+
+Page name: Rates
+
+Your task is to extract the content (text, images, and hierarchy) from this messy code and refactor it into a pristine, single-file `amenities.html` document.
+
+CRITICAL CONSTRAINTS & RULEBOOKS:
+You must strictly adhere to the project markdown files provided in this workspace:
+1. `visual-style-guide.md`: Use the exact hex codes and typography. Include the Tailwind `<script>` config in the `<head>` defining our custom colors (primary: '#48751F', secondary: '#F3F5F8', accent: '#D2963E', etc.) and Google Fonts (Montserrat and Inter).
+2. `design-guidelines.md`: Enforce strict semantic HTML (`<main>`, `<section>`, `<article>`). Ensure accessibility (min touch targets, `focus-visible` states, and logical heading hierarchies).
+3. `content-strategy.md`: Maintain the "protective, transparent, and hospitably Texan" brand voice. Ensure button copy uses our exact verbs (e.g., "Check Availability", "Book Online") and links open in a new tab (`target="_blank"`).
+4. `site-architecture.md`: Ensure the navigation links match the established routing.
+
+EXECUTION INSTRUCTIONS:
+1. Eliminate the Elementor "div-soup". Strip all `wp-`, `elementor-`, and plugin-specific classes. 
+2. Retain the exact Global Header and Global Footer structure from the `index.html` file. Do not change the navigation layout. Update the `aria-current="page"` attribute to highlight the "Amenities" link in the nav.
+3. Design the main content using modern Tailwind CSS grid/flexbox layouts. If there is a list of amenities, format them beautifully using cards or an icon grid.
+4. Use the soft, organic SVG wave dividers between sections if alternating background colors (`bg-white` to `bg-secondary`).
+5. Use the actual, current rates specified in the rates.md file.
+6. Output the COMPLETE, fully functioning HTML file from `<!DOCTYPE html>` to `</html>`. Do not truncate the code.
+7. Update index.html to properly reference the new/updated page in the navigation menu.
+
+Here is the raw WordPress body HTML to extract the content from:
+
+====
