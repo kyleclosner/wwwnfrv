@@ -122,7 +122,7 @@
                 <a href="amenities.html" class="hover:text-primary transition-colors">Amenities</a>
                 <a href="site-types.html" class="hover:text-primary transition-colors">Site types</a>
                 <a href="rates.html" class="hover:text-primary transition-colors">Rates</a>
-                <a href="directions.html" class="hover:text-primary transition-colors">Map & Directions</a>
+                <a href="directions.html" class="hover:text-primary transition-colors">Map</a>
                 <div class="relative group">
                     <button class="flex items-center gap-1 text-primary font-semibold transition-colors py-2" aria-current="page">
                         More ▾
@@ -169,7 +169,7 @@
             <a href="amenities.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">Amenities</a>
             <a href="site-types.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">Site types</a>
             <a href="rates.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">Rates</a>
-            <a href="directions.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">Map & Directions</a>
+            <a href="directions.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">Map</a>
             <a href="texas-renaissance-festival.html" class="block px-3 py-2 rounded-md font-semibold text-primary bg-secondary" aria-current="page">Texas Renaissance Festival</a>
             <a href="rv-park-near-montgomery-texas.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">RV Park near Montgomery</a>
             <a href="policies.html" class="block px-3 py-2 rounded-md font-medium text-gray-700 hover:bg-secondary hover:text-primary">Park Policies</a>
@@ -187,16 +187,40 @@
     <main id="main-content">
 
         <!-- Hero Header -->
-        <section class="bg-primary text-white py-16 md:py-24 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden"
+        <section class="relative min-h-[500px] sm:min-h-[580px] md:min-h-[660px] lg:min-h-[75vh] flex flex-col justify-between overflow-hidden"
             aria-labelledby="hero-title">
-            <div class="max-w-4xl mx-auto space-y-6 relative z-10">
-                <h1 id="hero-title" class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+            <!-- Background Image (Natural Color, No Overlay) -->
+            <div class="absolute inset-0 z-0 overflow-hidden">
+                <img src="images/trf-families-hero.jpg"
+                    alt="Families in Renaissance Festival costumes at Noble Forest RV Village"
+                    class="w-full h-full object-cover object-[center_top] md:object-[center_20%]">
+            </div>
+
+            <!-- Headline Floating in Upper Third -->
+            <div class="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 md:pt-20 text-center relative z-10">
+                <h1 id="hero-title" class="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight" style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85), 0 4px 20px rgba(0, 0, 0, 0.65);">
                     RV Park with Full Hookups near Texas Renaissance Festival
                 </h1>
-                <p class="text-xl sm:text-2xl text-goldAccent font-medium max-w-3xl mx-auto">
+            </div>
+
+            <!-- Wave Divider at Bottom of Hero -->
+            <div class="w-full overflow-hidden leading-none relative z-10" aria-hidden="true">
+                <svg class="relative block w-full h-10 sm:h-16 lg:h-20 text-white rotate-180" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                    <path fill="currentColor" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Secondary Copy & Booking Actions Section (White Background) -->
+        <section class="pt-8 pb-12 md:pt-12 md:pb-16 px-4 sm:px-6 lg:px-8 bg-white text-center">
+            <div class="max-w-4xl mx-auto space-y-6">
+                <!-- Subheadline -->
+                <p class="font-display text-xl sm:text-2xl font-bold text-accent">
                     Beat the Traffic &amp; Relax in Peaceful Shaded Comfort
                 </p>
-                <div class="text-base sm:text-lg text-gray-200 max-w-3xl mx-auto space-y-3 leading-relaxed">
+
+                <!-- Paragraph Copy -->
+                <div class="text-base sm:text-lg text-gray-800 max-w-[800px] mx-auto space-y-4 leading-relaxed font-normal">
                     <p>
                         Stay in peace and relax at Noble Forest RV Village, the ideal destination for RV camping during the <strong>Texas Renaissance Festival</strong>. Our clean, welcoming RV park is the perfect spot to unwind after a long day of festivities at the faire.
                     </p>
@@ -209,48 +233,38 @@
                 <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
                     <a href="https://app.fireflyreservations.com/reserve/property/NobleForestRV" target="_blank"
                         rel="noopener noreferrer"
-                        class="w-full sm:w-auto inline-flex items-center justify-center bg-accent hover:bg-[#be822d] active:scale-95 text-white font-semibold px-8 py-4 rounded-xl shadow-lg text-lg transition-all duration-150">
+                        class="w-full sm:w-auto inline-flex items-center justify-center bg-accent hover:bg-[#be822d] active:scale-95 text-white font-semibold px-8 py-4 rounded-xl shadow-md text-lg transition-all duration-150">
                         Check Availability
-                    </a>
-                    <a href="rates.html"
-                        class="w-full sm:w-auto inline-flex items-center justify-center bg-white/10 hover:bg-white/20 border border-white/30 text-white font-medium px-8 py-4 rounded-xl transition-all duration-150">
-                        View RenFest Rates
                     </a>
                 </div>
 
-                <!-- Badges -->
-                <div class="flex flex-wrap items-center justify-center gap-6 pt-4 text-sm text-gray-200">
+                <!-- Trust Badges / Checkmarks -->
+                <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-6 pt-4 text-sm text-gray-700 font-medium">
                     <span class="flex items-center gap-2">
-                        <svg class="w-5 h-5 text-goldAccent fill-current" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
+                        <span class="text-primary font-bold text-base">✓</span>
                         No obligation to reserve
                     </span>
                     <span class="flex items-center gap-2">
-                        <svg class="w-5 h-5 text-goldAccent fill-current" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
+                        <span class="text-primary font-bold text-base">✓</span>
                         Photos of each site available
                     </span>
                     <span class="flex items-center gap-2">
-                        <svg class="w-5 h-5 text-goldAccent fill-current" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
+                        <span class="text-primary font-bold text-base">✓</span>
                         Closest Full Hookups to RenFest
                     </span>
                 </div>
             </div>
         </section>
 
-        <!-- Top Wave Divider (Hero to Section 1: Primary to White) -->
-        <div class="w-full overflow-hidden leading-none bg-white" aria-hidden="true">
-            <svg class="relative block w-full h-10 sm:h-16 lg:h-20 text-primary" viewBox="0 0 1000 100" preserveAspectRatio="none">
+        <!-- Wave Divider (Top Intro to Section 1: White to Secondary) -->
+        <div class="w-full overflow-hidden leading-none bg-secondary" aria-hidden="true">
+            <svg class="relative block w-full h-10 sm:h-16 lg:h-20 text-white" viewBox="0 0 1000 100" preserveAspectRatio="none">
                 <path fill="currentColor" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
             </svg>
         </div>
 
         <!-- Section 1: Why Choose Noble Forest RV Village? -->
-        <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white" aria-labelledby="why-choose-renfest-heading">
+        <section class="py-16 px-4 sm:px-6 lg:px-8 bg-secondary" aria-labelledby="why-choose-renfest-heading">
             <div class="max-w-7xl mx-auto space-y-12">
                 <div class="text-center max-w-3xl mx-auto space-y-3">
                     <h2 id="why-choose-renfest-heading" class="font-display text-3xl sm:text-4xl font-bold text-primary">
@@ -263,7 +277,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Pillar 1: Feel Safe -->
-                    <article class="bg-secondary rounded-2xl p-8 border border-greyAccent shadow-sm hover:shadow-md transition-shadow space-y-4">
+                    <article class="bg-white rounded-2xl p-8 border border-greyAccent shadow-sm hover:shadow-md transition-shadow space-y-4">
                         <h3 class="font-display text-2xl font-bold text-primary">Feel Safe</h3>
                         <p class="text-gray-700 leading-relaxed">
                             Rest easy after the faire in our gated community. Our on-site live-in manager and property-wide security cameras ensure complete peace of mind throughout your festival stay.
@@ -276,7 +290,7 @@
                     </article>
 
                     <!-- Pillar 2: Family Friendly -->
-                    <article class="bg-secondary rounded-2xl p-8 border border-greyAccent shadow-sm hover:shadow-md transition-shadow space-y-4">
+                    <article class="bg-white rounded-2xl p-8 border border-greyAccent shadow-sm hover:shadow-md transition-shadow space-y-4">
                         <h3 class="font-display text-2xl font-bold text-primary">Family Friendly</h3>
                         <p class="text-gray-700 leading-relaxed">
                             No rowdy parties or disruptive noise. We strictly enforce nighttime quiet hours so you and your family can get real rest before heading back to the festival grounds.
@@ -289,7 +303,7 @@
                     </article>
 
                     <!-- Pillar 3: Great for Pets -->
-                    <article class="bg-secondary rounded-2xl p-8 border border-greyAccent shadow-sm hover:shadow-md transition-shadow space-y-4">
+                    <article class="bg-white rounded-2xl p-8 border border-greyAccent shadow-sm hover:shadow-md transition-shadow space-y-4">
                         <h3 class="font-display text-2xl font-bold text-primary">Great for Pets</h3>
                         <p class="text-gray-700 leading-relaxed">
                             Bring your furry companions along! With over 6,000 sq. feet of fenced grassy play space with shade, your pets will have plenty of room to stretch their legs.
@@ -304,15 +318,15 @@
             </div>
         </section>
 
-        <!-- Wave Divider (Section 1 to Section 2: White to Secondary) -->
-        <div class="w-full overflow-hidden leading-none bg-secondary" aria-hidden="true">
-            <svg class="relative block w-full h-10 sm:h-16 lg:h-20 text-white" viewBox="0 0 1000 100" preserveAspectRatio="none">
+        <!-- Wave Divider (Section 1 to Section 2: Secondary to White) -->
+        <div class="w-full overflow-hidden leading-none bg-white" aria-hidden="true">
+            <svg class="relative block w-full h-10 sm:h-16 lg:h-20 text-secondary" viewBox="0 0 1000 100" preserveAspectRatio="none">
                 <path fill="currentColor" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
             </svg>
         </div>
 
         <!-- Section 2: Your Visit to Texas RenFest and Noble Forest -->
-        <section class="py-16 px-4 sm:px-6 lg:px-8 bg-secondary" aria-labelledby="renfest-visit-heading">
+        <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white" aria-labelledby="renfest-visit-heading">
             <div class="max-w-7xl mx-auto space-y-12">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="space-y-6">
@@ -325,28 +339,28 @@
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
                             <!-- Feature 1 -->
-                            <div class="bg-white p-5 rounded-xl border border-greyAccent shadow-sm space-y-2">
+                            <div class="bg-secondary p-5 rounded-xl border border-greyAccent shadow-sm space-y-2">
                                 <div class="text-2xl text-primary font-bold">🚿 Clean</div>
                                 <p class="text-gray-600 text-sm">
                                     Four private bathrooms.  Single-person, air-conditioned, with with-in showers and plenty of hot water.
                                 </p>
                             </div>
                             <!-- Feature 2 -->
-                            <div class="bg-white p-5 rounded-xl border border-greyAccent shadow-sm space-y-2">
+                            <div class="bg-secondary p-5 rounded-xl border border-greyAccent shadow-sm space-y-2">
                                 <div class="text-2xl text-primary font-bold">🌲 Relaxing</div>
                                 <p class="text-gray-600 text-sm">
                                     Enjoy quiet evenings with crackling campfires at your spacious RV site.
                                 </p>
                             </div>
                             <!-- Feature 3 -->
-                            <div class="bg-white p-5 rounded-xl border border-greyAccent shadow-sm space-y-2">
+                            <div class="bg-secondary p-5 rounded-xl border border-greyAccent shadow-sm space-y-2">
                                 <div class="text-2xl text-primary font-bold">📍 Convenient</div>
                                 <p class="text-gray-600 text-sm">
                                     Closest full-hookup park to RenFest—less than 1 mile to the festival main gate off FM 1774.
                                 </p>
                             </div>
                             <!-- Feature 4 -->
-                            <div class="bg-white p-5 rounded-xl border border-greyAccent shadow-sm space-y-2">
+                            <div class="bg-secondary p-5 rounded-xl border border-greyAccent shadow-sm space-y-2">
                                 <div class="text-2xl text-primary font-bold">♿ Accessible</div>
                                 <p class="text-gray-600 text-sm">
                                     Accessible private restrooms, main office, and community clubhouse rooms.
@@ -364,27 +378,27 @@
                     </div>
 
                     <!-- Side Image Card -->
-                    <div class="bg-white rounded-3xl p-6 border border-greyAccent shadow-md space-y-4">
-                        <img src="images/renfest-families-Medium-1.jpeg"
-                            alt="Two families in renaissance costumes standing in front of RVs at Noble Forest"
+                    <div class="bg-secondary rounded-3xl p-6 border border-greyAccent shadow-md space-y-4">
+                        <img src="images/trf-camper-kilt.jpg"
+                            alt="Noble Forest RV camper dressed in Scottish Renaissance attire standing with his truck and RV"
                             class="w-full h-auto rounded-2xl object-cover shadow-sm">
                         <p class="text-center text-sm text-gray-600 italic">
-                            Families and performers make Noble Forest their home base year after year.
+                            Campers, performers, and fairgoers make Noble Forest their home base year after year.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Wave Divider (Section 2 to Section 3: Secondary to White) -->
-        <div class="w-full overflow-hidden leading-none bg-white" aria-hidden="true">
-            <svg class="relative block w-full h-10 sm:h-16 lg:h-20 text-secondary" viewBox="0 0 1000 100" preserveAspectRatio="none">
+        <!-- Wave Divider (Section 2 to Section 3: White to Secondary) -->
+        <div class="w-full overflow-hidden leading-none bg-secondary" aria-hidden="true">
+            <svg class="relative block w-full h-10 sm:h-16 lg:h-20 text-white" viewBox="0 0 1000 100" preserveAspectRatio="none">
                 <path fill="currentColor" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
             </svg>
         </div>
 
         <!-- Section 3: Real Reviews from RenFest Guests -->
-        <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white" aria-labelledby="reviews-heading">
+        <section class="py-16 px-4 sm:px-6 lg:px-8 bg-secondary" aria-labelledby="reviews-heading">
             <div class="max-w-7xl mx-auto space-y-12">
                 <div class="text-center max-w-3xl mx-auto space-y-3">
                     <h2 id="reviews-heading" class="font-display text-3xl sm:text-4xl font-bold text-primary">
@@ -397,7 +411,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Review 1 -->
-                    <article class="bg-secondary rounded-2xl p-6 border border-greyAccent shadow-sm flex flex-col justify-between space-y-4">
+                    <article class="bg-white rounded-2xl p-6 border border-greyAccent shadow-sm flex flex-col justify-between space-y-4">
                         <p class="text-gray-700 italic leading-relaxed text-sm">
                             "Wonderful place. We stay here when we are in town for the Renaissance Festival. The staff is very friendly and they keep the place well clean and maintained."
                         </p>
@@ -411,7 +425,7 @@
                     </article>
 
                     <!-- Review 2 -->
-                    <article class="bg-secondary rounded-2xl p-6 border border-greyAccent shadow-sm flex flex-col justify-between space-y-4">
+                    <article class="bg-white rounded-2xl p-6 border border-greyAccent shadow-sm flex flex-col justify-between space-y-4">
                         <p class="text-gray-700 italic leading-relaxed text-sm">
                             "We love Noble Forest. We have stayed here for several years when visiting the Texas Renaissance Festival. It has changed ownership recently and the new owners are working hard to clean up and make improvements. They are friendly and professional."
                         </p>
@@ -425,7 +439,7 @@
                     </article>
 
                     <!-- Review 3 -->
-                    <article class="bg-secondary rounded-2xl p-6 border border-greyAccent shadow-sm flex flex-col justify-between space-y-4">
+                    <article class="bg-white rounded-2xl p-6 border border-greyAccent shadow-sm flex flex-col justify-between space-y-4">
                         <p class="text-gray-700 italic leading-relaxed text-sm">
                             "This was the 3rd year staying at this RV park as a home base to tour the Renaissance Festival. Nice place, very convenient to the Renaissance."
                         </p>
@@ -439,7 +453,7 @@
                     </article>
 
                     <!-- Review 4 -->
-                    <article class="bg-secondary rounded-2xl p-6 border border-greyAccent shadow-sm flex flex-col justify-between space-y-4">
+                    <article class="bg-white rounded-2xl p-6 border border-greyAccent shadow-sm flex flex-col justify-between space-y-4">
                         <p class="text-gray-700 italic leading-relaxed text-sm">
                             "I stayed here with my wife for a whole month and absolutely loved the place. It has a lot of trees. Kids friendly, quiet and cozy. Great showers, private laundry room, and a community room. The manager is a very nice person."
                         </p>
@@ -453,7 +467,7 @@
                     </article>
 
                     <!-- Review 5 -->
-                    <article class="bg-secondary rounded-2xl p-6 border border-greyAccent shadow-sm flex flex-col justify-between space-y-4">
+                    <article class="bg-white rounded-2xl p-6 border border-greyAccent shadow-sm flex flex-col justify-between space-y-4">
                         <p class="text-gray-700 italic leading-relaxed text-sm">
                             "Park is gated, nice and quiet. Plenty of shade to keep everything cool in the summer and fall. My stay here was great."
                         </p>
@@ -467,7 +481,7 @@
                     </article>
 
                     <!-- Review 6 -->
-                    <article class="bg-secondary rounded-2xl p-6 border border-greyAccent shadow-sm flex flex-col justify-between space-y-4">
+                    <article class="bg-white rounded-2xl p-6 border border-greyAccent shadow-sm flex flex-col justify-between space-y-4">
                         <p class="text-gray-700 italic leading-relaxed text-sm">
                             "Totally Awesome! Optimal location for an RV park in the upper Houston area. Free Wi-Fi, pet and family friendly, clean wash houses, and nice rec-room. 5/5 stars!"
                         </p>
@@ -483,28 +497,30 @@
             </div>
         </section>
 
-        <!-- Wave Divider (Section 3 to Section 4: White to Secondary) -->
-        <div class="w-full overflow-hidden leading-none bg-secondary" aria-hidden="true">
-            <svg class="relative block w-full h-10 sm:h-16 lg:h-20 text-white" viewBox="0 0 1000 100" preserveAspectRatio="none">
+        <!-- Wave Divider (Section 3 to Section 4: Secondary to White) -->
+        <div class="w-full overflow-hidden leading-none bg-white" aria-hidden="true">
+            <svg class="relative block w-full h-10 sm:h-16 lg:h-20 text-secondary" viewBox="0 0 1000 100" preserveAspectRatio="none">
                 <path fill="currentColor" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
             </svg>
         </div>
 
         <!-- Section 4: Find Your Dream Site + Video Tour -->
-        <section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-secondary" aria-labelledby="dream-site-heading">
+        <section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white" aria-labelledby="dream-site-heading">
             <div class="max-w-7xl mx-auto space-y-12">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <!-- Image Card -->
-                    <div class="rounded-3xl overflow-hidden shadow-xl border border-greyAccent bg-white">
-                        <img src="images/covered-rv-site-renfest.jpg"
-                            alt="Class A motorhome parked under a protective covered RV structure with concrete pad at Noble Forest RV Village"
-                            class="w-full h-auto rounded-3xl object-cover shadow-sm">
+                    <!-- Video Embed -->
+                    <div class="rounded-3xl overflow-hidden shadow-xl border border-greyAccent bg-black aspect-video flex items-center justify-center">
+                        <iframe class="w-full h-full"
+                            src="https://www.youtube-nocookie.com/embed/hbuHbzJjbwQ"
+                            title="Texas Renaissance Festival Commute &amp; Noble Forest RV Village"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen loading="lazy"></iframe>
                     </div>
 
                     <!-- Content & Site Specs -->
                     <div class="space-y-6">
                         <h2 id="dream-site-heading" class="font-display text-3xl sm:text-4xl font-bold text-primary leading-tight">
-                            The perfect RV site to visit Texas Renaissance Festival
+                            Find Your Dream Site During Texas RenFair
                         </h2>
                         <p class="text-gray-700 text-lg leading-relaxed">
                             We have the perfect assortment of sites whether you're bringing a small travel trailer, big rig, or camping alongside friends:
@@ -537,7 +553,7 @@
                             <a href="https://app.fireflyreservations.com/reserve/property/NobleForestRV" target="_blank"
                                 rel="noopener noreferrer"
                                 class="inline-flex items-center justify-center bg-accent hover:bg-[#be822d] active:scale-95 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition-all duration-150">
-                                Reserve a Site for RenFest
+                                Reserve Your RenFest Site
                             </a>
                             <a href="rates.html"
                                 class="inline-flex items-center justify-center bg-white hover:bg-secondary border-2 border-primary text-primary font-semibold px-8 py-4 rounded-xl transition-all duration-150">

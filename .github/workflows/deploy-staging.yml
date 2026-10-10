@@ -1,0 +1,30 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  web-deploy:
+    name: Deploy to Bluehost Staging
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Sync Files to Bluehost Staging
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_STAGING_USER }}
+          password: ${{ secrets.FTP_STAGING_PASSWORD }}
+          port: 21
+          server-dir: ./
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/_docs/**
+            **/scratch/**
+            **/node_modules/**
+            .aicodeignore
