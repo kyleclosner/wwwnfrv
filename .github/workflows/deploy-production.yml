@@ -25,6 +25,8 @@ jobs:
             **/.git*
             **/.git*/**
             **/_docs/**
+            **/_includes/**
+            **/scripts/**
             **/scratch/**
             **/node_modules/**
             .aicodeignore

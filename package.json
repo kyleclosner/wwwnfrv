@@ -1,0 +1,9 @@
+{
+  "name": "wwwnfrv",
+  "version": "1.0.0",
+  "description": "Static website for North Forest RV Park",
+  "scripts": {
+    "start": "python3 -m http.server 8000"
+  },
+  "private": true
+}

@@ -4,30 +4,43 @@ This folder contains the core architectural rulebooks, design specifications, an
 
 ---
 
-## 🚀 Quick Copy-Paste Commands: Commit & Push to Staging
+## 🚀 Quick Copy-Paste Developer & Content Workflow
 
-Use these terminal commands whenever you want to save your work to Git and automatically deploy the updates to the live staging site (`staging.nobleforestrv.com` via GitHub Pages):
+Use these commands in order whenever making updates to the website:
 
+### Step 1: If Updating Header or Footer Navigation
+Edit [`_includes/header.html`](../_includes/header.html) or [`_includes/footer.html`](../_includes/footer.html), then run the sync script to automatically update all 10 site pages:
 ```bash
-# 1. Check which files have been modified or added
+python3 scripts/sync_components.py
+```
+*(Note: Navigation components are synchronized at editing/build time. Individual HTML pages should never have their header or footer edited directly.)*
+
+### Step 2: Preview the Site Locally
+Launch a local web server to review your changes in the browser:
+```bash
+python3 -m http.server 8000
+```
+Open **[http://localhost:8000](http://localhost:8000)** in your browser. Press `Ctrl+C` in your terminal when done.
+
+### Step 3: Check Git Status & Stage Changes
+```bash
+# 1. Review modified files
 git status
 
-# 2. Stage all changed and new files
+# 2. Stage all updated files
 git add .
+```
 
-# 3. Commit the changes with a descriptive message
-git commit -m "_"
+### Step 4: Commit and Push to Deploy
+```bash
+# 3. Commit with a concise summary
+git commit -m "Update navigation and header links"
 
-# 4. Push changes to GitHub (updates staging live)
+# 4. Push to GitHub (triggers automated deployment to Bluehost)
 git push origin main
 ```
 
-``` bash
-# 5. View the site locally
-python3 -m http.server 8000
-```
-
-> **Helpful Tip:** After running `git push origin main`, visit [https://staging.nobleforestrv.com](https://staging.nobleforestrv.com) to see your live changes!
+> **Helpful Tip:** After running `git push origin main`, visit [https://staging.nobleforestrv.com](https://staging.nobleforestrv.com) (or your production URL) to see the live updates!
 
 ---
 

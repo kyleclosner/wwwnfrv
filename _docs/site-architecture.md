@@ -70,6 +70,13 @@ nfrv-static-site/                         # Project Root
 │   ├── site-architecture.md              # UX, route hierarchy & physical file mapping (This document)
 │   └── visual-style-guide.md             # Color tokens, typography roles & aesthetic thesis
 │
+├── _includes/                            # Reusable Master Component Partials (DO NOT DEPLOY DIRECTLY)
+│   ├── header.html                       # Authoritative header, utility bar, and desktop/mobile nav
+│   └── footer.html                       # Authoritative 4-column footer, social icons, map & toggle script
+│
+├── scripts/                              # Local Developer Utilities & Automation
+│   └── sync_components.py               # Zero-dependency Python script to propagate header & footer
+│
 ├── assets/                               # Shared Static Deliverables
 │   ├── fonts/                            # Locally hosted WOFF2 web fonts (zero external Google CDN lag)
 │   │   ├── inter-v20-latin-*.woff2       # Inter weights (Regular, 500, 600, Italic)
@@ -93,26 +100,31 @@ nfrv-static-site/                         # Project Root
 
 ### 2. Architectural Principles & File Rules
 
-1. **Isolation of `_docs/`:**
-   * The underscore prefix (`_`) signals that the directory contains metadata, design rules, and planning documents rather than runnable website code.
-   * **Deployment Hygiene:** When deploying to production servers or static hosts, exclude the `_docs/` folder (via `.gitignore`, build exclusion, or publish directory settings) so internal strategies and private notes are never exposed via public URLs.
+1. **Isolation of `_docs/`, `_includes/`, and `scripts/`:**
+   * Folders prefixed with an underscore (`_`) or utility folders (`scripts/`) contain internal metadata, templates, and automation scripts.
+   * **Deployment Hygiene:** Exclude these folders from production/staging deployment (configured in `.github/workflows/deploy-production.yml` and `deploy-staging.yml`) so raw templates and build utilities are not served publicly.
 
-2. **Flat Root HTML Structure for Clean URL Routing:**
+2. **Global Components Architecture (Header & Footer Synchronization):**
+   * **Inclusion Model:** Header and footer components are synchronized at **editing/build time** via `scripts/sync_components.py`, NOT at browser runtime. This ensures instant loading (zero CLS/flicker), 100% SEO indexability, and clean static serving.
+   * **AGENT & DEVELOPER DIRECTIVE (CRITICAL):**
+     * **NEVER** edit inlined `<header>` or `<footer>` blocks inside individual `.html` files directly.
+     * **ALWAYS** make header or footer updates in `_includes/header.html` or `_includes/footer.html`.
+     * **ALWAYS** run `python3 scripts/sync_components.py` immediately after editing templates.
+     * The script reads the master templates, detects the active page filename, assigns `aria-current="page"` and active styling (`text-primary font-semibold`), and injects the updated markup between `<!-- START:HEADER -->` / `<!-- END:HEADER -->` and `<!-- START:FOOTER -->` / `<!-- END:FOOTER -->` across all root pages.
+
+3. **Flat Root HTML Structure for Clean URL Routing:**
    * All primary landing pages live directly in the root directory.
-   * Hosting platforms (GitHub Pages, Netlify, Cloudflare Pages, Vercel, or Apache/LiteSpeed via `.htaccess`) rewrite clean paths automatically:
-     * `nobleforestrv.com/site-types.html` rewrites to `nobleforestrv.com/site-types`
-     * `nobleforestrv.com/amenities.html` rewrites to `nobleforestrv.com/amenities`
-   * Internal anchor links across the site should consistently point to clean paths or relative `.html` endpoints as configured by the server.
+   * Hosting platforms rewrite clean paths automatically (`site-types.html` $\rightarrow$ `/site-types`).
 
-3. **Asset Referencing Standards:**
+4. **Asset Referencing Standards:**
    * **Relative Paths:** Internal pages must reference shared assets using relative paths starting from the root or relative position:
      * Fonts: `assets/fonts/montserrat-v31-latin-700.woff2`
-     * Images: `assets/images/logo-transparent.png`
+     * Images: `images/logo-transparent.png`
      * Global Styles: `<link rel="stylesheet" href="styles.css">`
-   * **Self-Contained Font Hosting:** The `assets/fonts/` directory contains self-hosted WOFF2 assets to eliminate third-party render-blocking requests, protect user privacy, and ensure maximum performance.
+   * **Self-Contained Font Hosting:** The `assets/fonts/` directory contains self-hosted WOFF2 assets to eliminate third-party render-blocking requests.
 
-4. **CNAME & Root Configuration:**
-   * The `CNAME` file must exist at the root level containing the primary production domain (`nobleforestrv.com`) for seamless DNS resolution on static hosts.
+5. **CNAME & Root Configuration:**
+   * The `CNAME` file must exist at the root level containing the primary production domain (`nobleforestrv.com`).
 
 ---
 
