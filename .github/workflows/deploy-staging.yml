@@ -1,13 +1,14 @@
-name: Deploy to Staging
+name: Deploy to Test / Staging
 
 on:
   push:
     branches:
       - staging
+      - test
 
 jobs:
   web-deploy:
-    name: Deploy to Bluehost Staging
+    name: Deploy to Bluehost Test Subdomain
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
